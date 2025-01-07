@@ -31,7 +31,7 @@ export default function AddClassificators() {
   return (
     <>
       <TableHeader title="Klassifikatorlary goşmak" />
-      <div class="mx-7 my-7 bg-white rounded-lg">
+      <div class="mx-7 my-7 bg-white dark:bg-[#363062] rounded-lg">
         <div class="mt-3 text-center font-Quicksand font-medium text-[#AF47D2] text-2xl">
           Doldyrylmaly Anketa
         </div>

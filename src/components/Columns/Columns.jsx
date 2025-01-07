@@ -50,7 +50,7 @@ export default function Columns() {
   }, []);
 
   return (
-    <ul className="cursor-pointer min-h-[300px] grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 w-full p-2">
+    <ul className="cursor-pointer min-h-[300px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 w-full p-2">
       {statistic.map((posts) => (
         <a
           href={posts.path}

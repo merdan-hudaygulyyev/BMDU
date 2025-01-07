@@ -1,8 +1,9 @@
 import React from "react";
 
-export default function Button({ children }) {
+export default function Button({ children, onClick }) {
   return (
     <button
+      onClick={onClick}
       type="button"
       data-twe-ripple-init
       data-twe-ripple-color="light"

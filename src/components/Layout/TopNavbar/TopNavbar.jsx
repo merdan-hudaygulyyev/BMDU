@@ -9,6 +9,7 @@ import Tm from "../../../../public/images/tkm.png";
 import En from "../../../../public/images/usa.png";
 import { BiLogOut } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { HiOutlineMenu } from "react-icons/hi";
 
 const locales = [
   {
@@ -31,7 +32,7 @@ const locales = [
 export default function TopNavbar() {
   const { t, i18n } = useTranslation();
   const [show, setShow] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark" ? true : false;
   });
@@ -78,7 +79,7 @@ export default function TopNavbar() {
   };
 
   return (
-    <div className="m-2 mx-7 p-3 dark:bg-[#363062] px-6 max-h-[100px] flex justify-between items-center shadow-lg rounded-md bg-white">
+    <div className="m-2 mx-9 p-3 dark:bg-[#363062] px-6 max-h-[100px] flex justify-between items-center shadow-lg rounded-md bg-white">
       <div className="flex items-center gap-2">
         <span class="relative flex h-3 w-3">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#AF47D2] opacity-75"></span>
@@ -109,9 +110,7 @@ export default function TopNavbar() {
           <GrLanguage />
         </button>
         {show && (
-          <div
-            className="absolute right-6-7 rounded-xl bg-white top-[77px] h-[100px] w-[70px] dark:bg-[#363062]"
-          >
+          <div className="absolute right-6-7 rounded-xl bg-white top-[77px] h-[100px] w-[70px] dark:bg-[#363062]">
             <div className="m-1 flex flex-col gap-2 font-Ovo p-0.5">
               {locales.map((locale) => (
                 <li

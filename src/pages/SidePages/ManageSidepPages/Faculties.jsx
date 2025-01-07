@@ -66,13 +66,13 @@ export default function App() {
                     key={fac.id}
                     className="border-b border-b-slate-400 dark:bg-transparent  bg-white"
                   >
-                    <td className="whitespace-nowrap px-6 py-4 font-Quicksand">
+                    <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
                       {fac.id}
                     </td>
-                    <td className="whitespace-nowrap px-6 py-4 font-Quicksand">
+                    <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
                       {fac.name}
                     </td>
-                    <td className="whitespace-nowrap px-6 py-4 font-Quicksand">
+                    <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
                       {fac.abbreviation}
                     </td>
                     <td className="whitespace-nowrap space-x-2 px-3 py-4">
