@@ -21,11 +21,27 @@ export default function App() {
     getFaculties();
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      const confirmDelete = window.confirm(
+        "Are you sure you want to delete this?"
+      );
+      if (confirmDelete) {
+        // Call the delete API
+        localStorage.removeItem("faculties");
+        // Remove the deleted school from the state
+        setFaculties((prev) => prev.filter((fac) => fac.id !== id));
+      }
+    } catch (error) {
+      console.error("Failed to delete the school:", error);
+    }
+  };
+
   return (
     <>
       <TableHeader title="Fakultetler /" href="/add-faculties" />
       <div className="flex flex-col">
-        <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div className="py-2 mx-4">
           <table className="min-w-full text-center text-sm font-Montserrat dark:text-white">
             <thead className="border-b bg-white dark:bg-[#363062] font-medium dark:border-neutral-500 text-black dark:text-white">
               <tr>
@@ -40,7 +56,7 @@ export default function App() {
                 </th>
                 <th scope="col" className="px-6 py-4">
                   Gurallar
-                </th> 
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -60,14 +76,14 @@ export default function App() {
                       {fac.abbreviation}
                     </td>
                     <td className="whitespace-nowrap space-x-2 px-3 py-4">
-                      <button className="text-2xl text-white bg-[#AF47D2] hover:bg-[#E49BFF] rounded-full p-1">
+                      <button className="text-2xl text-black p-1 dark:text-white">
                         <AiOutlineEdit />
                       </button>
-                      <button className="text-2xl text-white bg-[#AF47D2] hover:bg-[#E49BFF] rounded-full p-1">
+                      <button className="text-2xl text-black p-1 dark:text-white">
                         <HiEye />
                       </button>
-                      <button className="text-2xl text-white bg-[#AF47D2] hover:bg-[#E49BFF] rounded-full p-1">
-                        <MdOutlineDelete />
+                      <button className="text-2xl text-black p-1 dark:text-white">
+                        <MdOutlineDelete onClick={() => handleDelete(fac.id)} />
                       </button>
                     </td>
                   </tr>

@@ -21,7 +21,7 @@ export default function AddDegrees() {
         const response = await createDegrees(values);
         console.log("API Response Details:", response);
 
-        localStorage.setItem("rows", JSON.stringify(values));
+        localStorage.setItem("degrees", JSON.stringify(values));
         resetForm();
         navigate("/apparating", { replace: true });
       } catch (error) {

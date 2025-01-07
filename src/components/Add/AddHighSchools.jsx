@@ -25,7 +25,7 @@ export default function AddHighSchools() {
         const response = await createHighSchool(values);
         console.log("API Response Details:", response);
         
-        localStorage.setItem("rows", JSON.stringify(values))
+        localStorage.setItem("high_schools", JSON.stringify(values))
         resetForm();
         navigate("/insta", { replace: true });
       } catch (error) {

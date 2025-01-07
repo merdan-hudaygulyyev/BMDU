@@ -1,7 +1,7 @@
 export default function TableHeader({ title, href }) {
   return (
-    <div className="max-h-[50px] h-screen p-2 m-2 mx-6">
-      <div className="flex flex-col md:flex-row gap-3 items-center">
+    <div className="max-h-[50px] max-w-full h-screen p-2 m-2 mx-6">
+      <div className="flex  gap-3 items-center">
         <h2 className="font-Quicksand font-medium text-[#AF47D2] text-2xl">
           {title}
         </h2>

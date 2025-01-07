@@ -78,7 +78,7 @@ export default function TopNavbar() {
   };
 
   return (
-    <div className="m-2 mx-7 p-3 dark:bg-[#363062] px-6 max-h-[100px] flex justify-between items-center shadow-lg max-w-full rounded-md bg-white">
+    <div className="m-2 mx-7 p-3 dark:bg-[#363062] px-6 max-h-[100px] flex justify-between items-center shadow-lg rounded-md bg-white">
       <div className="flex items-center gap-2">
         <span class="relative flex h-3 w-3">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#AF47D2] opacity-75"></span>

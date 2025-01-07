@@ -22,11 +22,25 @@ export default function App() {
     getHighSchools();
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      const confirmDelete = window.confirm("Are you sure you want to delete this?");
+      if (confirmDelete) {
+        // Call the delete API
+        localStorage.removeItem("high_schools")
+        // Remove the deleted school from the state
+        setHighSchools((prevSchools) => prevSchools.filter((school) => school.id !== id));
+      }
+    } catch (error) {
+      console.error("Failed to delete the school:", error);
+    }
+  };
+
   return (
     <>
       <TableHeader title="Ýokary okuw mekdepleri /" href="/add-high-school" />
       <div className="flex flex-col">
-        <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div className="py-2 mx-4">
           <table className="min-w-full text-center text-sm font-Montserrat dark:text-white">
             <thead className="border-b bg-white dark:bg-[#363062] font-medium dark:border-neutral-500 text-black dark:text-white">
               <tr>
@@ -55,7 +69,7 @@ export default function App() {
                 highSchools.map((school) => (
                   <tr
                     key={school.id}
-                    className="border-b border-b-slate-400 dark:bg-transparent  bg-white"
+                    className="border-b border-b-slate-400 dark:bg-transparent bg-white"
                   >
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
                       {school.id}
@@ -73,14 +87,14 @@ export default function App() {
                       {school.female_students}
                     </td>
                     <td className="whitespace-nowrap space-x-2 px-3 py-4">
-                      <button className="text-2xl text-white bg-[#AF47D2] hover:bg-[#E49BFF] rounded-full p-1">
+                      <button className="text-2xl text-black p-1 dark:text-white">
                         <AiOutlineEdit />
                       </button>
-                      <button className="text-2xl text-white bg-[#AF47D2] hover:bg-[#E49BFF] rounded-full p-1">
+                      <button className="text-2xl text-black p-1 dark:text-white">
                         <HiEye />
                       </button>
-                      <button className="text-2xl text-white bg-[#AF47D2] hover:bg-[#E49BFF] rounded-full p-1">
-                        <MdOutlineDelete />
+                      <button className="text-2xl text-black p-1 dark:text-white">
+                        <MdOutlineDelete onClick={() => handleDelete(school.id)}/>
                       </button>
                     </td>
                   </tr>

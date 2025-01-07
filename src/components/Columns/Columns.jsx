@@ -1,21 +1,52 @@
 import { useState, useEffect } from "react";
-import { fetchUsers } from "../../api/services/apiHelpers";
-import { statistic } from "../../assets/statsitic/statistics";
 import ColumnIcons from "../../components/icons/ColumnIcons";
 
-export default function Columns() {
-  const [users, setUsers] = useState([]);
+// Remove the import for the hardcoded statistic
+// import statistic from '../../assets/statsitic/statistics'
 
+export default function Columns() {
+  // State to hold the statistic data
+  const [statistic, setStatistic] = useState([]);
+  const [finished, setFinished] = useState([]);
+
+  // Fetch data when the component mounts
   useEffect(() => {
-    const getUsers = async () => {
+    async function fetchData() {
       try {
-        const data = await fetchUsers();
-        setUsers(data); // Set the fetched data
+        // Fetch the data from the API
+        const response = await fetch('http://localhost:8000/api/v1/root-dashboard/');
+        
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+
+        const fetchedStatistic = [
+          { id: 1, path: '/insta', title: data.high_schools_count, text: "Ýokary okuw mekdepleri", type: "institute" },
+          { id: 2, path: '/faculties', title: data.faculties_count, text: "Fakultet sany", type: "faculties" },
+          { id: 3, path: '/nations', title: data.nationalities_count, text: "Millet sany", type: "nations" },
+          { id: 4, path: '/cafedra', title: data.departments_count, text: "Kafedra sany", type: "cafedras" },
+          { id: 5, path: '/apps', title: data.specializations_count, text: "Hünar sany", type: "apps" },
+          { id: 6, path: '/student', title: data.studentCount, text: "Jemi talyp sany", type: "result" },
+          { id: 7, path: '#', title: data.boysCount, text: "Jemi oglan sany", type: "boys" },
+          { id: 8, path: '#', title: data.girlsCount, text: "Jemi gyz sany", type: "girls" },
+        ];
+
+        const fetchedFinished = [
+          { id: 1, path: '/insta', title: data.finishedBoys, text: 'Oglanlar', type: 'boys' },
+          { id: 2, path: '/insta', title: data.finishedGirls, text: 'Gyzlar', type: 'girls' },
+        ];
+
+        // Update the state with the fetched data
+        setStatistic(fetchedStatistic);
+        setFinished(fetchedFinished);
       } catch (error) {
-        console.error("Failed to load high schools:", error);
+        console.error('Error fetching data:', error);
       }
-    };
-    getUsers();
+    }
+
+    fetchData();
   }, []);
 
   return (

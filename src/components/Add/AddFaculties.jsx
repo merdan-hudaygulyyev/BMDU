@@ -21,7 +21,7 @@ export default function AddFaculties() {
         const response = await createDepartment(values);
         console.log("API Response Details:", response);
 
-        localStorage.setItem("rows", JSON.stringify(values));
+        localStorage.setItem("faculties", JSON.stringify(values));
         resetForm();
         navigate("/faculties", { replace: true });
       } catch (error) {

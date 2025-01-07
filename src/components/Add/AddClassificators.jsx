@@ -19,7 +19,7 @@ export default function AddClassificators() {
         const response = await createClassificators(values);
         console.log("API Response Details:", response);
 
-        localStorage.setItem("rows", JSON.stringify(values));
+        localStorage.setItem("classificator", JSON.stringify(values));
         resetForm();
         navigate("/classific", { replace: true });
       } catch (error) {

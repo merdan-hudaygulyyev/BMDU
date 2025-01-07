@@ -14,7 +14,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="bg-white max-[426px]:hidden dark:bg-[#363062] dark:shadow-none shadow-xl overflow-auto overflow-x-hidden rounded-r-md w-[255px] p-4">
+      <div className="bg-white max-[1200px]:hidden dark:bg-[#363062] dark:shadow-none shadow-xl overflow-auto overflow-x-hidden rounded-r-md w-[255px] p-4">
         <div className="flex items-center gap-4 ">
           <img src={logo} className="w-10" alt="Logo" />
           <h1 className="font-Quicksand font-medium text-[#AF47D2]">B M D U</h1>
