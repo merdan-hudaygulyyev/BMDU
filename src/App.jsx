@@ -29,7 +29,8 @@ import AddHighSchools from "./components/Add/AddHighSchools";
 import AddCafedras from "./components/Add/AddCafedras";
 import AddDegrees from './components/Add/AddDegrees'
 import AddClassificators from './components/Add/AddClassificators'
-import HighSchoolDetails from "./components/HighSchoolDetails/HighSchoolDetails";
+import HighSchoolDetails from "./components/HighSchoolDetails/HighSchoolDetails.jsx";
+import AddFaculties from "./components/Add/AddFaculties.jsx";
 
 
 const routes = createBrowserRouter([
@@ -196,6 +197,14 @@ const routes = createBrowserRouter([
     element: (
       <Layout>
         <AddHighSchools />
+      </Layout>
+    ),
+  },
+  {
+    path: "/add-faculty",
+    element: (
+      <Layout>
+        <AddFaculties />
       </Layout>
     ),
   },
