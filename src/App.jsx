@@ -26,9 +26,10 @@ import Filter_1 from "./pages/SidePages/FilterSidePages/Filter_1";
 import Filter_2 from "./pages/SidePages/FilterSidePages/Filter_2";
 //add
 import AddHighSchools from "./components/Add/AddHighSchools";
-import AddFaculties from "./components/Add/AddFaculties";
+import AddCafedras from "./components/Add/AddCafedras";
 import AddDegrees from './components/Add/AddDegrees'
 import AddClassificators from './components/Add/AddClassificators'
+import HighSchoolDetails from "./components/HighSchoolDetails/HighSchoolDetails";
 
 
 const routes = createBrowserRouter([
@@ -199,10 +200,10 @@ const routes = createBrowserRouter([
     ),
   },
   {
-    path: "/add-faculties",
+    path: "/add-cafedras",
     element: (
       <Layout>
-        <AddFaculties />
+        <AddCafedras />
       </Layout>
     ),
   },
@@ -219,6 +220,14 @@ const routes = createBrowserRouter([
     element: (
       <Layout>
         <AddClassificators />
+      </Layout>
+    ),
+  },
+  {
+    path: "/insta/:id",
+    element: (
+      <Layout>
+        <HighSchoolDetails />
       </Layout>
     ),
   },

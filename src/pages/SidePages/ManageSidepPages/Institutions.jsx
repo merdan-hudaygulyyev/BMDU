@@ -5,16 +5,19 @@ import { AiOutlineEdit } from "react-icons/ai";
 import TableHeader from "../../../components/TableHeader/TableHeader";
 import { fetchHighSchools } from "../../../api/services/apiHelpers";
 import Pagination from "../../../components/Pagination/Pagination";
+import { fetchHighSchoolDetails } from "../../../api/services/View/view";
+import { useNavigate } from "react-router-dom";
 
 export default function App() {
   const [highSchools, setHighSchools] = useState([]);
+  const navigate = useNavigate()
+  const [selectedSchool, setSelectedSchool] = useState(null);
 
   useEffect(() => {
     const getHighSchools = async () => {
       try {
         const data = await fetchHighSchools();
         setHighSchools(data); // Set the fetched data
-        console.log(data)
       } catch (error) {
         console.error("Failed to load high schools:", error);
       }
@@ -24,15 +27,29 @@ export default function App() {
 
   const handleDelete = async (id) => {
     try {
-      const confirmDelete = window.confirm("Are you sure you want to delete this?");
+      const confirmDelete = window.confirm(
+        "Are you sure you want to delete this?"
+      );
       if (confirmDelete) {
         // Call the delete API
-        localStorage.removeItem("high_schools")
+        localStorage.removeItem("high_schools");
         // Remove the deleted school from the state
-        setHighSchools((prevSchools) => prevSchools.filter((school) => school.id !== id));
+        setHighSchools((prevSchools) =>
+          prevSchools.filter((school) => school.id !== id)
+        );
       }
     } catch (error) {
       console.error("Failed to delete the school:", error);
+    }
+  };  
+
+  const handleViewDetails = async (id) => {
+    try {
+      const data = await fetchHighSchoolDetails(id);
+      setSelectedSchool(data);
+      navigate(`/insta/${id}`);
+    } catch (error) {
+      console.error("Failed to fetch high school details:", error);
     }
   };
 
@@ -91,10 +108,14 @@ export default function App() {
                         <AiOutlineEdit />
                       </button>
                       <button className="text-2xl text-black p-1 dark:text-white">
-                        <HiEye />
+                        <HiEye onClick={() => {
+                          handleViewDetails(school.id)
+                        }}/>
                       </button>
                       <button className="text-2xl text-black p-1 dark:text-white">
-                        <MdOutlineDelete onClick={() => handleDelete(school.id)}/>
+                        <MdOutlineDelete
+                          onClick={() => handleDelete(school.id)}
+                        />
                       </button>
                     </td>
                   </tr>

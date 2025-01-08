@@ -21,7 +21,7 @@ export const fetchHighSchools = async () => {
     });
 };
 
-export const fetchFaculties = async () => {
+export const fetchCafedras = async () => {
   return axiosInstance
     .get("/v1/departments/")
     .then((response) => response.data)

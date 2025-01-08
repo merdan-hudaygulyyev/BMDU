@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import TableHeader from "../TableHeader/TableHeader";
 import { createDepartment } from "../../api/services/apiHelpers";
 
-export default function AddFaculties() {
+export default function AddCafedras() {
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -21,9 +21,9 @@ export default function AddFaculties() {
         const response = await createDepartment(values);
         console.log("API Response Details:", response);
 
-        localStorage.setItem("faculties", JSON.stringify(values));
+        localStorage.setItem("cafedras", JSON.stringify(values));
         resetForm();
-        navigate("/faculties", { replace: true });
+        navigate("/cafedra", { replace: true });
       } catch (error) {
         alert("An error occurred. Please try again later.");
       }
@@ -32,7 +32,7 @@ export default function AddFaculties() {
 
   return (
     <>
-      <TableHeader title="Fakultetleri goşmak" />
+      <TableHeader title="Kafedralary goşmak" />
       <div class="mx-7 my-7 bg-white dark:bg-[#363062] rounded-lg">
         <div class="mt-3 text-center font-Quicksand font-medium text-[#AF47D2] text-2xl">
           Doldyrylmaly Anketa
