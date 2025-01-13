@@ -28,9 +28,9 @@ export default function Columns() {
           { id: 3, path: '/nations', title: data.nationalities_count, text: "Millet sany", type: "nations" },
           { id: 4, path: '/cafedra', title: data.departments_count, text: "Kafedra sany", type: "cafedras" },
           { id: 5, path: '/apps', title: data.specializations_count, text: "Hünar sany", type: "apps" },
-          { id: 6, path: '/student', title: data.studentCount, text: "Jemi talyp sany", type: "result" },
-          { id: 7, path: '#', title: data.boysCount, text: "Jemi oglan sany", type: "boys" },
-          { id: 8, path: '#', title: data.girlsCount, text: "Jemi gyz sany", type: "girls" },
+          { id: 6, path: '/student', title: data.students_count, text: "Jemi talyp sany", type: "result" },
+          { id: 7, path: '#', title: data.male_students_count, text: "Jemi oglan sany", type: "boys" },
+          { id: 8, path: '#', title: data.female_students_count, text: "Jemi gyz sany", type: "girls" },
         ];
 
         const fetchedFinished = [
@@ -63,7 +63,7 @@ export default function Columns() {
             </h3>
             <p className="font-Montserrat">{posts.text}</p>
           </div>
-          <span className="rounded-full p-2 bg-[#AF47D2] text-white max-[769px]:hidden">
+          <span className="rounded-full p-2 bg-slate-500 text-white max-[769px]:hidden">
             <ColumnIcons type={posts.type} />
           </span>
         </a>

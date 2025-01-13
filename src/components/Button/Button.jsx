@@ -5,9 +5,7 @@ export default function Button({ children, onClick }) {
     <button
       onClick={onClick}
       type="button"
-      data-twe-ripple-init
-      data-twe-ripple-color="light"
-      className="flex gap-2 justify-center items-center outline-none rounded dark:shadow-none bg-[#AF47D2] px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-xl transition duration-150 ease-in-out hover:bg-[#E49BFF] hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+      className="flex gap-2 dark:text-white bg-slate-800 hover:bg-slate-600 text-white dark:border-white justify-center items-center outline-none rounded dark:shadow-none px-5 pb-2 pt-2.5 text-xs font-medium uppercase  shadow-xl transition duration-150 ease-in-out focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 "
     >
       {children}
     </button>

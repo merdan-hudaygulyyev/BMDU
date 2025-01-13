@@ -34,7 +34,7 @@ export default function AddCafedras() {
     <>
       <TableHeader title="Kafedralary goşmak" />
       <div class="mx-7 my-7 bg-white dark:bg-[#363062] rounded-lg">
-        <div class="mt-3 text-center font-Quicksand font-medium text-[#AF47D2] text-2xl">
+        <div class="mt-3 text-center font-Quicksand font-medium text-slate-600 dark:text-white text-2xl">
           Doldyrylmaly Anketa
         </div>
         <form onSubmit={formik.handleSubmit}>
@@ -45,7 +45,7 @@ export default function AddCafedras() {
                 name="name"
                 onChange={formik.handleChange}
                 value={formik.values.name}
-                class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-[#AF47D2] focus:outline-none focus:ring-1 focus:ring-[#AF47D2] sm:text-sm"
+                className="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500  focus:outline-none focus:ring-1 sm:text-sm"
                 placeholder="Doly ady *"
               />
               <input
@@ -53,13 +53,14 @@ export default function AddCafedras() {
                 name="abbreviation"
                 onChange={formik.handleChange}
                 value={formik.values.abbreviation}
-                class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-[#AF47D2] focus:outline-none focus:ring-1 focus:ring-[#AF47D2] sm:text-sm"
+                className="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500  focus:outline-none focus:ring-1 sm:text-sm"
                 placeholder="Gysgaltmasy *"
               />
             </div>
             <div className="flex flex-col items-center justify-center">
-              <button
-                className="mt-2 outline-none bg-[#AF47D2] hover:bg-[#772a8c] px-10 py-2 text-white uppercase rounded font-Quicksand tracking-wider"
+            <button
+                className="mt-2 outline-none bg-gray-800 dark:bg-slate-600
+                  hover:bg-slate-600 dark:hover:bg-slate-400 px-10 py-2 text-white uppercase rounded font-Quicksand tracking-wider"
                 type="submit"
               >
                 Giriz

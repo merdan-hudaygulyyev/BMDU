@@ -31,7 +31,12 @@ import AddDegrees from './components/Add/AddDegrees'
 import AddClassificators from './components/Add/AddClassificators'
 import HighSchoolDetails from "./components/HighSchoolDetails/HighSchoolDetails.jsx";
 import AddFaculties from "./components/Add/AddFaculties.jsx";
-
+//add each 
+import AddEachApp from './components/AddEach/AddEachApp.jsx'
+import AddEachCafedra from './components/AddEach/AddEachCafedra.jsx'
+import StudentDetails from "./components/StudentDetails/StudentDetails.jsx";
+import AddStudents from "./components/Add/AddStudents.jsx";
+import Basket from './pages/SidePages/Basket/Basket.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -193,6 +198,14 @@ const routes = createBrowserRouter([
     ),
   },
   {
+    path: "/basket",
+    element: (
+      <Layout>
+        <Basket />
+      </Layout>
+    ),
+  },
+  {
     path: "/add-high-school",
     element: (
       <Layout>
@@ -201,10 +214,26 @@ const routes = createBrowserRouter([
     ),
   },
   {
-    path: "/add-faculty",
+    path: "/insta/:id/add-faculty",
     element: (
       <Layout>
         <AddFaculties />
+      </Layout>
+    ),
+  },
+  {
+    path: "/insta/:id/cafedra",
+    element: (
+      <Layout>
+        <AddEachCafedra />
+      </Layout>
+    ),
+  },
+  {
+    path: "/insta/:id/apps",
+    element: (
+      <Layout>
+        <AddEachApp />
       </Layout>
     ),
   },
@@ -233,10 +262,26 @@ const routes = createBrowserRouter([
     ),
   },
   {
+    path: "/add-students",
+    element: (
+      <Layout>
+        <AddStudents />
+      </Layout>
+    ),
+  },
+  {
     path: "/insta/:id",
     element: (
       <Layout>
         <HighSchoolDetails />
+      </Layout>
+    ),
+  },
+  {
+    path: "/student/:id",
+    element: (
+      <Layout>
+        <StudentDetails />
       </Layout>
     ),
   },

@@ -5,7 +5,7 @@ import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   return (
-    <div className="max-h-screen md:dark:bg-[#363062] bg-none mx-6 max-w-full rounded-lg overflow-y-auto overflow-x-hidden ">
+    <div className="max-h-screen md:dark:bg-[#363062] bg-none mx-9 max-w-full rounded-lg overflow-y-auto overflow-x-hidden ">
       <Columns />
       <div className="mt-2 w-full max-h-screen">
         <Charts />

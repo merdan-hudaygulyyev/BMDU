@@ -16,7 +16,7 @@ export default function FootColumns() {
             </h3>
             <p className="font-Montserrat">{posts.text}</p>
           </div>
-          <span className="rounded-full p-2 bg-[#AF47D2] text-white max-[769px]:hidden">
+          <span className="rounded-full p-2 bg-slate-500 text-white max-[769px]:hidden">
             <FootColumnIcons type={posts.type} />
           </span>
         </a>

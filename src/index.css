@@ -4,14 +4,9 @@
 
 /* Add this to your CSS file */
 ::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #AF47D2;
+    background-color: #1c2833;
     border-radius: 2px;
   }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #E49BFF;
-  }
-  

@@ -47,7 +47,7 @@ export default function Login() {
           <div className="w-[500px] hidden md:block">
             <img src={img} />
           </div>
-          <div className=" max-w-sm p-16 border rounded-xl bg-[#F5EFFF]">
+          <div className=" max-w-sm p-16 border rounded-xl shadow-xl ">
             <h3 className="font-Montserrat text-3xl mb-8 text-nowrap">
               Hoş Geldiňiz!✋
             </h3>
@@ -56,7 +56,7 @@ export default function Login() {
             </p>
             <form onSubmit={formik.handleSubmit} className="text-center">
               <input
-                className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded"
+                className="text-sm w-full outline-none px-4 py-2 border border-solid border-gray-300 rounded"
                 type="text"
                 placeholder="Ulanyjynyň ady"
                 value={formik.values.username}
@@ -69,7 +69,7 @@ export default function Login() {
                 </span>
               ) : null}
               <input
-                className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4"
+                className="text-sm w-full outline-none px-4 py-2 border border-solid border-gray-300 rounded mt-4"
                 placeholder="Açar sözi"
                 value={formik.values.password}
                 name="password"
@@ -82,7 +82,7 @@ export default function Login() {
                 </span>
               ) : null}
               <button
-                className="mt-4 outline-none bg-[#7E5CAD] hover:bg-[#69247C] px-6 py-2 text-white uppercase rounded font-Quicksand tracking-wider"
+                className="mt-4 outline-none border border-gray-500 px-6 py-2 text-gray-500 uppercase rounded font-Quicksand tracking-wider"
                 type="submit"
               >
                 Giriş

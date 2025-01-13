@@ -17,7 +17,7 @@ export default function ResultColumn() {
             </h3>
             <p className="font-Montserrat">{cols.text}</p>
           </div>
-          <span className="rounded-full p-2 bg-[#AF47D2] text-white max-[769px]:hidden">
+          <span className="rounded-full p-2 bg-slate-500 text-white max-[769px]:hidden">
             <ColumnIcons type={cols.type} />
           </span>
         </a>

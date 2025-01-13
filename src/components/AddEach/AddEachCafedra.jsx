@@ -8,7 +8,7 @@ import { MdOutlineDelete } from "react-icons/md";
 import Footer from "../Footer/Footer";
 import TableHeader from "../TableHeader/TableHeader";
 
-export default function AddFaculties() {
+export default function AddEachCafedra() {
   const { id } = useParams();
   const [schoolDetail, setSchoolDetail] = useState(null);
 
@@ -58,7 +58,7 @@ export default function AddFaculties() {
         </ul>
       </div>
       <div className="mx-5">
-        <TableHeader title="Fakultet goşmak"/>
+        <TableHeader title="Kafedra goşmak" />
         <Input />
         <div className="flex flex-col">
           <div className="py-2 mx-7">
@@ -69,7 +69,10 @@ export default function AddFaculties() {
                     Id
                   </th>
                   <th scope="col" className="px-6 py-4">
-                    Fakultetler
+                   Kafedra
+                  </th>
+                  <th scope="col" className="px-6 py-4">
+                    Fakulteti
                   </th>
                   <th scope="col" className="px-6 py-4">
                     Gurallar
@@ -79,6 +82,9 @@ export default function AddFaculties() {
               <tbody className="border-b border-b-gray-500">
                 <td className="whitespace-nowrap px-6 py-2 font-Quicksand ">
                   {schoolDetail.id}
+                </td>
+                <td className="whitespace-nowrap px-6 py-2 font-Montserrat">
+                  {schoolDetail.departments}
                 </td>
                 <td className="whitespace-nowrap px-6 py-2 font-Montserrat">
                   {schoolDetail.faculties}
@@ -95,7 +101,7 @@ export default function AddFaculties() {
             </table>
           </div>
         </div>
-      <Footer />
+        <Footer />
       </div>
     </div>
   );

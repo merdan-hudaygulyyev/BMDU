@@ -8,7 +8,7 @@ import { MdOutlineDelete } from "react-icons/md";
 import Footer from "../Footer/Footer";
 import TableHeader from "../TableHeader/TableHeader";
 
-export default function AddFaculties() {
+export default function AddEachApp() {
   const { id } = useParams();
   const [schoolDetail, setSchoolDetail] = useState(null);
 
@@ -58,7 +58,7 @@ export default function AddFaculties() {
         </ul>
       </div>
       <div className="mx-5">
-        <TableHeader title="Fakultet goşmak"/>
+        <TableHeader title="Hünär goşmak" />
         <Input />
         <div className="flex flex-col">
           <div className="py-2 mx-7">
@@ -69,7 +69,13 @@ export default function AddFaculties() {
                     Id
                   </th>
                   <th scope="col" className="px-6 py-4">
-                    Fakultetler
+                    Hünär
+                  </th>
+                  <th scope="col" className="px-6 py-4">
+                    Klassifikator
+                  </th>
+                  <th scope="col" className="px-6 py-4">
+                    Kafedra
                   </th>
                   <th scope="col" className="px-6 py-4">
                     Gurallar
@@ -81,21 +87,29 @@ export default function AddFaculties() {
                   {schoolDetail.id}
                 </td>
                 <td className="whitespace-nowrap px-6 py-2 font-Montserrat">
-                  {schoolDetail.faculties}
+                  {schoolDetail.specializations}
+                </td>
+                <td className="whitespace-nowrap px-6 py-2 font-Montserrat">
+                  {schoolDetail.active}
+                </td>
+                <td className="whitespace-nowrap px-6 py-2 font-Montserrat">
+                  {schoolDetail.departments}
                 </td>
                 <td className="whitespace-nowrap space-x-2 px-3 py-4">
                   <button className="text-2xl text-black p-1 dark:text-white">
                     <AiOutlineEdit />
                   </button>
                   <button className="text-2xl text-black p-1 dark:text-white">
-                    <MdOutlineDelete onClick={() => handleDelete(schoolDetail.id)} />
+                    <MdOutlineDelete
+                      onClick={() => handleDelete(schoolDetail.id)}
+                    />
                   </button>
                 </td>
               </tbody>
             </table>
           </div>
         </div>
-      <Footer />
+        <Footer />
       </div>
     </div>
   );

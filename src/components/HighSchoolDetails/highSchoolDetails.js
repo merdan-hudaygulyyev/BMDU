@@ -1,8 +1,8 @@
 export const highSchoolDetails = [
-  { id: 1, active: true, path: "#", title: "Profile" },
-  { id: 1, path: "/add-faculty", title: "Fakultetler" },
-  { id: 1, path: "#", title: "Kafedralar" },
-  { id: 1, path: "#", title: "Hünarler" },
+  { id: 1, path: "/insta/:id", title: "Profile" },
+  { id: 1, path: "/insta/:id/add-faculty", title: "Fakultetler" },
+  { id: 1, path: "/insta/:id/cafedra", title: "Kafedralar" },
+  { id: 1, path: "/insta/:id/apps", title: "Hünarler" },
 ];
 
 export const column = [

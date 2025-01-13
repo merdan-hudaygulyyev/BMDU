@@ -24,8 +24,8 @@ export default function AddHighSchools() {
       try {
         const response = await createHighSchool(values);
         console.log("API Response Details:", response);
-        
-        localStorage.setItem("high_schools", JSON.stringify(values))
+
+        localStorage.setItem("high_schools", JSON.stringify(values));
         resetForm();
         navigate("/insta", { replace: true });
       } catch (error) {
@@ -39,7 +39,7 @@ export default function AddHighSchools() {
     <>
       <TableHeader title="Ýokary okuw jaýlary goşmak" />
       <div class="mx-7 my-7 bg-white dark:bg-[#363062] rounded-lg">
-        <div class="mt-3 text-center font-Quicksand font-medium text-[#AF47D2] text-2xl">
+        <div class="mt-3 text-center font-Quicksand font-medium text-slate-600 dark:text-white text-2xl">
           Doldyrylmaly Anketa
         </div>
         <form onSubmit={formik.handleSubmit}>
@@ -50,7 +50,7 @@ export default function AddHighSchools() {
                 name="name"
                 onChange={formik.handleChange}
                 value={formik.values.name}
-                class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-[#AF47D2] focus:outline-none focus:ring-1 focus:ring-[#AF47D2] sm:text-sm"
+                className="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500  focus:outline-none focus:ring-1 sm:text-sm"
                 placeholder="Doly ady *"
               />
               <input
@@ -58,7 +58,7 @@ export default function AddHighSchools() {
                 name="abbreviation"
                 onChange={formik.handleChange}
                 value={formik.values.abbreviation}
-                class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-[#AF47D2] focus:outline-none focus:ring-1 focus:ring-[#AF47D2] sm:text-sm"
+                className="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500  focus:outline-none focus:ring-1 sm:text-sm"
                 placeholder="Gysgaltmasy *"
               />
             </div>
@@ -68,7 +68,7 @@ export default function AddHighSchools() {
                 name="username"
                 onChange={formik.handleChange}
                 value={formik.values.username}
-                class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-[#AF47D2] focus:outline-none focus:ring-1 focus:ring-[#AF47D2] sm:text-sm"
+                className="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500  focus:outline-none focus:ring-1 sm:text-sm"
                 placeholder="Ulanyjynyň ady *"
               />
               <input
@@ -76,13 +76,14 @@ export default function AddHighSchools() {
                 name="password"
                 onChange={formik.handleChange}
                 value={formik.values.password}
-                class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-[#AF47D2] focus:outline-none focus:ring-1 focus:ring-[#AF47D2] sm:text-sm"
+                className="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500  focus:outline-none focus:ring-1 sm:text-sm"
                 placeholder="Açar sözi *"
               />
             </div>
             <div className="flex flex-col items-center justify-center">
               <button
-                className="mt-2 outline-none bg-[#AF47D2] hover:bg-[#772a8c] px-10 py-2 text-white uppercase rounded font-Quicksand tracking-wider"
+                className="mt-2 outline-none bg-gray-800 dark:bg-slate-600
+                  hover:bg-slate-600 dark:hover:bg-slate-400 px-10 py-2 text-white uppercase rounded font-Quicksand tracking-wider"
                 type="submit"
               >
                 Giriz
