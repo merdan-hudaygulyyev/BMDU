@@ -83,18 +83,18 @@ export default function TopNavbar() {
       <div className="flex items-center gap-2">
         <span class="relative flex h-3 w-3">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-700 dark:bg-slate-300 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-slate-700 dark:bg-slate-300"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-slate-600 dark:bg-slate-300"></span>
         </span>
         <h2 className="text-gray-600 font-Montserrat text-xl dark:text-gray-300">Admin</h2>
         <button title="Sahypadan çykmak" onClick={handleLogout}>
-          <BiLogOut className="text-slate-700 font-Montserrat dark:text-slate-300 text-xl cursor-pointer" />
+          <BiLogOut className="text-slate-600 font-Montserrat dark:text-slate-300 text-xl cursor-pointer" />
         </button>
       </div>
       <div className="space-x-5">
         <button
           title="Light/Dark Mode"
           onClick={toggleDarkMode}
-          className="text-2xl outline-none text-slate-700 dark:text-white max-[320px]:hidden max-[331px]:hidden transition-all"
+          className="text-2xl outline-none text-slate-600 dark:text-white max-[320px]:hidden max-[331px]:hidden transition-all"
         >
           {darkMode ? (
             <FaRegMoon />
@@ -105,7 +105,7 @@ export default function TopNavbar() {
         <button
           title="Dilini çalyşmak"
           onClick={() => setShow((prev) => !prev)}
-          className="text-2xl outline-none text-slate-700 max-[320px]:hidden max-[331px]:hidden dark:text-white transition-all"
+          className="text-2xl outline-none text-slate-600 max-[320px]:hidden max-[331px]:hidden dark:text-white transition-all"
         >
           <GrLanguage />
         </button>

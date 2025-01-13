@@ -35,9 +35,9 @@ export default function OpenSidebar({ showSidebar }) {
             className={`flex items-center gap-2 text-nowrap p-2 mr-1 
             text-gray-600 hover:pl-4 ${
               showSidebar && "border"
-            } border-none rounded-lg hover:bg-slate-800 dark:text-white mt-2 hover:text-white transition-all ${
+            } border-none rounded-lg hover:bg-slate-600 dark:text-white mt-2 hover:text-white transition-all ${
               activePath === menu.path
-                ? "bg-slate-800 text-white p-2 border-none"
+                ? "bg-slate-600 text-white p-2 border-none"
                 : ""
             }`}
           >
@@ -64,9 +64,9 @@ export default function OpenSidebar({ showSidebar }) {
             className={`flex items-center gap-2 p-2 text-nowrap mr-1 
       text-gray-500 hover:pl-4 ${
         showSidebar && "border"
-      } border-none rounded-lg hover:bg-slate-800 dark:text-white mt-2 hover:text-white transition-all ${
+      } border-none rounded-lg hover:bg-slate-600 dark:text-white mt-2 hover:text-white transition-all ${
               activePath === lists.path
-                ? "bg-slate-800 text-white p-2 border-none"
+                ? "bg-slate-600 text-white p-2 border-none"
                 : ""
             }`}
           >
@@ -93,9 +93,9 @@ export default function OpenSidebar({ showSidebar }) {
             className={`flex items-center gap-3 text-nowrap p-2 mr-1 
       text-gray-500 hover:pl-4 ${
         showSidebar && "border"
-      } border-none rounded-lg hover:bg-slate-800 dark:text-white mt-2 hover:text-white transition-all ${
+      } border-none rounded-lg hover:bg-slate-600 dark:text-white mt-2 hover:text-white transition-all ${
               activePath === filter.path
-                ? "bg-slate-800 text-white p-2 border-none"
+                ? "bg-slate-600 text-white p-2 border-none"
                 : ""
             }`}
           >
@@ -117,9 +117,9 @@ export default function OpenSidebar({ showSidebar }) {
           className={`flex items-center gap-3 text-nowrap p-2 mr-1 dark:hover:text-[#AF47D2] 
       text-gray-500 hover:pl-4 ${
         showSidebar && "border"
-      } border-none rounded-lg hover:bg-slate-800 dark:text-white mt-2 hover:text-white transition-all ${
+      } border-none rounded-lg hover:bg-slate-600 dark:text-white mt-2 hover:text-white transition-all ${
             activePath === filter.path
-              ? "bg-slate-800 text-white p-2 border-none"
+              ? "bg-slate-600 text-white p-2 border-none"
               : ""
           }`}
         >

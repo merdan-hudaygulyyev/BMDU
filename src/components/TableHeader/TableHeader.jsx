@@ -6,7 +6,7 @@ export default function TableHeader({ title, href }) {
           {title}
         </h2>
         {href && (
-          <button className="flex gap-2 justify-center items-center outline-none rounded bg-gray-800 dark:bg-slate-600 px-5 pb-2 pt-2.5 text-xs font-medium uppercase text-white shadow-xl transition duration-150 ease-in-out hover:bg-slate-600 dark:hover:bg-slate-400">
+          <button className="flex gap-2 justify-center items-center outline-none rounded bg-slate-700 dark:bg-slate-600 px-5 pb-2 pt-2.5 text-xs font-medium uppercase text-white shadow-xl transition duration-150 ease-in-out hover:bg-slate-600 dark:hover:bg-slate-400">
             <a href={href}>Täze goş</a>
           </button>
         )}

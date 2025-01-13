@@ -5,13 +5,17 @@ import { AiOutlineEdit } from "react-icons/ai";
 import TableHeader from "../../../components/TableHeader/TableHeader";
 import { fetchHighSchools } from "../../../api/services/apiHelpers";
 import Pagination from "../../../components/Pagination/Pagination";
-import { fetchStudents, fetchViewStudents } from "../../../api/services/View/view";
+import {
+  fetchStudents,
+  fetchViewStudents,
+} from "../../../api/services/View/view";
 import { useNavigate } from "react-router-dom";
 
 export default function App() {
   const [students, setStudents] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [selectedSchool, setSelectedStudent] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const getStudents = async () => {
@@ -41,7 +45,7 @@ export default function App() {
     } catch (error) {
       console.error("Failed to delete the school:", error);
     }
-  };  
+  };
 
   const handleViewDetails = async (id) => {
     try {
@@ -53,11 +57,22 @@ export default function App() {
     }
   };
 
+  const filteredStudents = students.filter((student) =>
+    student.full_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <>
       <TableHeader title="Talyplar /" href="/add-students" />
       <div className="flex flex-col">
         <div className="py-2 mx-4">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="float-right outline-none rounded-md mb-2 px-2 p-2"
+            placeholder="Gözleg..."
+          />
           <table className="min-w-full text-center text-sm font-Montserrat dark:text-white">
             <thead className="border-b bg-white dark:bg-[#363062] font-medium dark:border-neutral-500 text-black dark:text-white">
               <tr>
@@ -82,8 +97,8 @@ export default function App() {
               </tr>
             </thead>
             <tbody>
-              {students.length > 0 ? (
-                students.map((student) => (
+              {filteredStudents.length > 0 ? (
+                filteredStudents.map((student) => (
                   <tr
                     key={student.id}
                     className="border-b border-b-slate-400 dark:bg-transparent bg-white"
@@ -98,7 +113,7 @@ export default function App() {
                       {student.specialization}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
-                      {student.specialization}
+                      {student.course}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
                       {student.birth_date}
@@ -108,9 +123,11 @@ export default function App() {
                         <AiOutlineEdit />
                       </button>
                       <button className="text-2xl text-black p-1 dark:text-white">
-                        <HiEye onClick={() => {
-                          handleViewDetails(student.id)
-                        }}/>
+                        <HiEye
+                          onClick={() => {
+                            handleViewDetails(student.id);
+                          }}
+                        />
                       </button>
                       <button className="text-2xl text-black p-1 dark:text-white">
                         <MdOutlineDelete

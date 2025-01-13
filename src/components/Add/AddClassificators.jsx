@@ -49,7 +49,7 @@ export default function AddClassificators() {
             </div>
             <div className="flex flex-col items-center justify-center">
               <button
-                className="mt-2 outline-none bg-gray-800 dark:bg-slate-600
+                className="mt-2 outline-none bg-slate-700 dark:bg-slate-600
                   hover:bg-slate-600 dark:hover:bg-slate-400 px-10 py-2 text-white uppercase rounded font-Quicksand tracking-wider"
                 type="submit"
               >
