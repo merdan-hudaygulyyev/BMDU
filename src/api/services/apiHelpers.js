@@ -10,13 +10,15 @@ export const LoginFN = async (data) => {
     });
 };
 
-
 export const fetchHighSchools = async () => {
   return axiosInstance
     .get("/v1/high-schools/")
     .then((response) => response.data)
     .catch((error) => {
-      console.error("Error fetching high schools:", error.response || error.message);
+      console.error(
+        "Error fetching high schools:",
+        error.response || error.message
+      );
       throw error.response?.data || error.message;
     });
 };
@@ -26,7 +28,10 @@ export const fetchCafedras = async () => {
     .get("/v1/departments/")
     .then((response) => response.data)
     .catch((error) => {
-      console.error("Error fetching high schools:", error.response || error.message);
+      console.error(
+        "Error fetching high schools:",
+        error.response || error.message
+      );
       throw error.response?.data || error.message;
     });
 };
@@ -36,18 +41,23 @@ export const fetchUsers = async () => {
     .get("/v1/root-dashboard/")
     .then((response) => response.data)
     .catch((error) => {
-      console.error("Error fetching high schools:", error.response || error.message);
+      console.error(
+        "Error fetching high schools:",
+        error.response || error.message
+      );
       throw error.response?.data || error.message;
     });
 };
-
 
 export const createHighSchool = async (data) => {
   return axiosInstance
     .post("/v1/create-high-school/", data)
     .then((response) => response.data)
     .catch((error) => {
-      console.error("Error creating high school:", error.response || error.message);
+      console.error(
+        "Error creating high school:",
+        error.response || error.message
+      );
       throw error.response?.data || error.message;
     });
 };
@@ -57,7 +67,10 @@ export const createDepartment = async (data) => {
     .post("/v1/create-department/", data)
     .then((response) => response.data)
     .catch((error) => {
-      console.error("Error creating high school:", error.response || error.message);
+      console.error(
+        "Error creating high school:",
+        error.response || error.message
+      );
       throw error.response?.data || error.message;
     });
 };
@@ -67,7 +80,10 @@ export const createDegrees = async (data) => {
     .post("/v1/create-degree/", data)
     .then((response) => response.data)
     .catch((error) => {
-      console.error("Error creating high school:", error.response || error.message);
+      console.error(
+        "Error creating high school:",
+        error.response || error.message
+      );
       throw error.response?.data || error.message;
     });
 };
@@ -77,18 +93,23 @@ export const createClassificators = async (data) => {
     .post("/v1/create-classificator/", data)
     .then((response) => response.data)
     .catch((error) => {
-      console.error("Error creating high school:", error.response || error.message);
+      console.error(
+        "Error creating high school:",
+        error.response || error.message
+      );
       throw error.response?.data || error.message;
     });
 };
-
 
 export const fetchDegrees = async (data) => {
   return axiosInstance
     .get("/v1/degrees/", data)
     .then((response) => response.data)
     .catch((error) => {
-      console.error("Error creating high school:", error.response || error.message);
+      console.error(
+        "Error creating high school:",
+        error.response || error.message
+      );
       throw error.response?.data || error.message;
     });
 };
@@ -98,7 +119,23 @@ export const fetchClassificators = async (data) => {
     .get("/v1/classificators/", data)
     .then((response) => response.data)
     .catch((error) => {
-      console.error("Error creating high school:", error.response || error.message);
+      console.error(
+        "Error creating high school:",
+        error.response || error.message
+      );
+      throw error.response?.data || error.message;
+    });
+};
+
+export const getHighSchoolEx = async (id) => {
+  return axiosInstance
+    .get(`v1/get-example/high-school/${id}/row-count/1/`)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(
+        "Error fetching high schools:",
+        error.response || error.message
+      );
       throw error.response?.data || error.message;
     });
 };

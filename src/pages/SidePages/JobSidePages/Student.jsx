@@ -110,10 +110,10 @@ export default function App() {
                       {student.full_name}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
-                      {student.specialization}
+                      {student.yom}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
-                      {student.course}
+                      {student.specialization}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
                       {student.birth_date}

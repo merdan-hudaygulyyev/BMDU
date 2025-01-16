@@ -44,7 +44,7 @@ export default function Input() {
                 name="name"
                 onChange={formik.handleChange}
                 value={formik.values.name}
-                class="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-[#AF47D2] focus:outline-none focus:ring-1 focus:ring-[#AF47D2] sm:text-sm"
+                class="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:outline-none focus:ring-1  sm:text-sm"
                 placeholder="Doly ady *"
               />
             </div>

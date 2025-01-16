@@ -34,7 +34,7 @@ export default function AddFaculties() {
   }
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 max-h-screen md:dark:bg-[#363062] bg-none max-w-full rounded-lg overflow-y-auto overflow-x-hidden mx-9 my-6">
       <div className="mx-10 p-1">
         <h1 className="font-Quicksand font-medium ml-2.5 mb-4 text-slate-600 dark:text-white text-xl">
           {schoolDetail.name}
