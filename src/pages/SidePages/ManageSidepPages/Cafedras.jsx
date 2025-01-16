@@ -39,7 +39,7 @@ export default function App() {
 
   return (
     <>
-      <TableHeader title="Fakultetler /" href="/add-cafedras" />
+      <TableHeader title="Kafedralar /" href="/add-cafedras" />
       <div className="flex flex-col">
         <div className="py-2 mx-4">
           <table className="min-w-full text-center text-sm font-Montserrat dark:text-white">
@@ -49,7 +49,7 @@ export default function App() {
                   Id
                 </th>
                 <th scope="col" className="px-6 py-4">
-                  Fakultetler
+                  Kafedralar
                 </th>
                 <th scope="col" className="px-6 py-4">
                   Gygaltmasy
