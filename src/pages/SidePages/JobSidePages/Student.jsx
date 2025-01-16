@@ -119,9 +119,9 @@ export default function App() {
                       {student.birth_date}
                     </td>
                     <td className="whitespace-nowrap space-x-2 px-3 py-4">
-                      <button className="text-2xl text-black p-1 dark:text-white">
+                      {/* <button className="text-2xl text-black p-1 dark:text-white">
                         <AiOutlineEdit />
-                      </button>
+                      </button> */}
                       <button className="text-2xl text-black p-1 dark:text-white">
                         <HiEye
                           onClick={() => {

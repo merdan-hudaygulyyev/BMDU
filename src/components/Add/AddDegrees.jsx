@@ -10,11 +10,11 @@ export default function AddDegrees() {
   const formik = useFormik({
     initialValues: {
       name: "",
-      abbreviation: "",
+      duration: "",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Required"),
-      abbreviation: Yup.string().required("Required"),
+      duration: Yup.string().required("Required"),
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
@@ -32,7 +32,7 @@ export default function AddDegrees() {
 
   return (
     <>
-      <TableHeader title="Hünar derejeleri goşmak" />
+      <TableHeader title="Hünar derejesini goşmak" />
       <div class="mx-7 my-7 bg-white dark:bg-[#363062] rounded-lg">
         <div class="mt-3 text-center font-Quicksand font-medium text-slate-600 dark:text-white text-2xl">
           Doldyrylmaly Anketa
@@ -50,11 +50,11 @@ export default function AddDegrees() {
               />
               <input
                 type="text"
-                name="abbreviation"
+                name="duration"
                 onChange={formik.handleChange}
-                value={formik.values.abbreviation}
+                value={formik.values.duration}
                 className="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500  focus:outline-none focus:ring-1 sm:text-sm"
-                placeholder="Gysgaltmasy *"
+                placeholder="Dowamlylygy *"
               />
             </div>
             <div className="flex flex-col items-center justify-center">

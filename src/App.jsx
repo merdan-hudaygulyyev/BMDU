@@ -27,16 +27,17 @@ import Filter_2 from "./pages/SidePages/FilterSidePages/Filter_2";
 //add
 import AddHighSchools from "./components/Add/AddHighSchools";
 import AddCafedras from "./components/Add/AddCafedras";
-import AddDegrees from './components/Add/AddDegrees'
-import AddClassificators from './components/Add/AddClassificators'
+import AddDegrees from "./components/Add/AddDegrees";
+import AddClassificators from "./components/Add/AddClassificators";
 import HighSchoolDetails from "./components/HighSchoolDetails/HighSchoolDetails.jsx";
 import AddFaculties from "./components/Add/AddFaculties.jsx";
-//add each 
-import AddEachApp from './components/AddEach/AddEachApp.jsx'
-import AddEachCafedra from './components/AddEach/AddEachCafedra.jsx'
+//add each
+import AddEachApp from "./components/AddEach/AddEachApp.jsx";
+import AddEachCafedra from "./components/AddEach/AddEachCafedra.jsx";
 import StudentDetails from "./components/StudentDetails/StudentDetails.jsx";
 import AddStudents from "./components/Add/AddStudents.jsx";
-import Basket from './pages/SidePages/Basket/Basket.jsx'
+import Basket from "./pages/SidePages/Basket/Basket.jsx";
+import CafedraDetails from "./components/CafedraDetails/CafedraDetails.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -274,6 +275,14 @@ const routes = createBrowserRouter([
     element: (
       <Layout>
         <HighSchoolDetails />
+      </Layout>
+    ),
+  },
+  {
+    path: "/cafedra/:id",
+    element: (
+      <Layout>
+        <CafedraDetails />
       </Layout>
     ),
   },

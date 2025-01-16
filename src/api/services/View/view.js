@@ -10,6 +10,16 @@ export const fetchHighSchoolDetails = async (id) => {
     });
 };
 
+export const fetchCafedraDetails = async (id) => {
+  return axiosInstance
+    .get(`/v1/department/${id}/`)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error("Error fetching high schools:", error.response || error.message);
+      throw error.response?.data || error.message;
+    });
+};
+
 export const fetchViewStudents = async (id) => {
   return axiosInstance
     .get(`/v1/student/${id}/`)

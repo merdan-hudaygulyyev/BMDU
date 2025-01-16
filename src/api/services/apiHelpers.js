@@ -64,7 +64,37 @@ export const createHighSchool = async (data) => {
 
 export const createDepartment = async (data) => {
   return axiosInstance
-    .post("/v1/create-department/", data)
+    .post("/v1/departments/", data)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(error.response || error.message);
+      throw error.response?.data || error.message;
+    });
+};
+
+export const deleteDepartment = async (id) => {
+  return axiosInstance
+    .delete(`/v1/departments/${id}/`)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(error.response || error.message);
+      throw error.response?.data || error.message;
+    });
+};
+
+export const changeDepartment = async (id, data) => {
+  return axiosInstance
+    .put(`/v1/departments/${id}/`, data) // data should include both name and abbreviation
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(error.response || error.message);
+      throw error.response?.data || error.message;
+    });
+};
+
+export const createDegrees = async (data) => {
+  return axiosInstance
+    .post("/v1/degrees/", data)
     .then((response) => response.data)
     .catch((error) => {
       console.error(
@@ -75,15 +105,22 @@ export const createDepartment = async (data) => {
     });
 };
 
-export const createDegrees = async (data) => {
+export const deleteDegrees = async (id) => {
   return axiosInstance
-    .post("/v1/create-degree/", data)
+    .delete(`/v1/degrees/${id}/`)
     .then((response) => response.data)
     .catch((error) => {
-      console.error(
-        "Error creating high school:",
-        error.response || error.message
-      );
+      console.error(error.response || error.message);
+      throw error.response?.data || error.message;
+    });
+};
+
+export const changeDegrees = async (id, data) => {
+  return axiosInstance
+    .put(`/v1/degrees/${id}/`, data) // data should include both name and abbreviation
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(error.response || error.message);
       throw error.response?.data || error.message;
     });
 };
