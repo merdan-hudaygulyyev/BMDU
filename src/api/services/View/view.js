@@ -2,7 +2,7 @@ import { axiosInstance } from "../../axiosinstance";
 
 export const fetchHighSchoolDetails = async (id) => {
   return axiosInstance
-    .get(`/v1/high-school/${id}/`)
+    .get(`/v1/high-schools/${id}/`)
     .then((response) => response.data)
     .catch((error) => {
       console.error("Error fetching high schools:", error.response || error.message);

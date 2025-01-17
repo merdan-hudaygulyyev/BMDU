@@ -193,7 +193,7 @@ export default function App() {
               onChange={(e) =>
                 setEditData({ ...editData, name: e.target.value })
               }
-              className="border border-gray-300 p-2 w-full mb-4"
+              className="border border-gray-300 p-2 w-[400px] mb-4"
             />
             <label className="block mb-2">Gysgaltmasy</label>
             <input
@@ -202,20 +202,22 @@ export default function App() {
               onChange={(e) =>
                 setEditData({ ...editData, abbreviation: e.target.value })
               }
-              className="border border-gray-300 p-2 w-full mb-4"
+              className="border border-gray-300 p-2 w-[400px] mb-4"
             />
-            <button
-              onClick={handleSave}
-              className="bg-blue-500 text-white p-2 rounded"
-            >
-              Giriz
-            </button>
-            <button
-              onClick={handleCloseModal}
-              className="ml-2 bg-gray-500 text-white p-2 rounded"
-            >
-              Yza
-            </button>
+            <div className="flex justify-center">
+              <button
+                onClick={handleSave}
+                className="bg-blue-500 text-white p-2 rounded"
+              >
+                Giriz
+              </button>
+              <button
+                onClick={handleCloseModal}
+                className="ml-2 bg-gray-500 text-white p-2 rounded"
+              >
+                Yza
+              </button>
+            </div>
           </div>
         </div>
       )}

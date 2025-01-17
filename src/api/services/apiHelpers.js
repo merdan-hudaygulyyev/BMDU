@@ -62,6 +62,26 @@ export const createHighSchool = async (data) => {
     });
 };
 
+export const deleteHighSchool = async (id) => {
+  return axiosInstance
+    .delete(`/v1/high-schools/${id}/`)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(error.response || error.message);
+      throw error.response?.data || error.message;
+    });
+};
+
+export const changeHighSchool = async (id, data) => {
+  return axiosInstance
+    .put(`/v1/high-schools/${id}/`, data)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(error.response || error.message);
+      throw error.response?.data || error.message;
+    });
+};
+
 export const createDepartment = async (data) => {
   return axiosInstance
     .post("/v1/departments/", data)
