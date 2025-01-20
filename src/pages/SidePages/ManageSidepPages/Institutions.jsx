@@ -12,13 +12,14 @@ import Pagination from "../../../components/Pagination/Pagination";
 import { fetchHighSchoolDetails } from "../../../api/services/View/view";
 import { useNavigate } from "react-router-dom";
 
-export default function App() {
+export default function Institutions() {
   const [highSchools, setHighSchools] = useState([]);
   const navigate = useNavigate();
   const [selectedSchool, setSelectedSchool] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editData, setEditData] = useState({
     id: "",
+    name: '',
     abbreviation: "",
   });
 

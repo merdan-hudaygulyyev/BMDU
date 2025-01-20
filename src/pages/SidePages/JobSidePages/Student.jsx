@@ -12,6 +12,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export default function App() {
+  const [highSchool, setHighSchool] = useState([])
   const [students, setStudents] = useState([]);
   const navigate = useNavigate();
   const [selectedSchool, setSelectedStudent] = useState(null);
@@ -27,6 +28,18 @@ export default function App() {
       }
     };
     getStudents();
+  }, []);
+
+  useEffect(() => {
+    const getHighSchool = async () => {
+      try {
+        const data = await fetchHighSchools();
+        setHighSchool(data); // Set the fetched data
+      } catch (error) {
+        console.error("Failed to load high schools:", error);
+      }
+    };
+    getHighSchool();
   }, []);
 
   const handleDelete = async (id) => {
@@ -110,7 +123,7 @@ export default function App() {
                       {student.full_name}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
-                      {student.yom}
+                      {student.high_school}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
                       {student.specialization}

@@ -23,6 +23,19 @@ export const fetchHighSchools = async () => {
     });
 };
 
+export const fetchNations = async () => {
+  return axiosInstance
+    .get("/v1/nationalities/")
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(
+        "Error fetching high schools:",
+        error.response || error.message
+      );
+      throw error.response?.data || error.message;
+    });
+};
+
 export const fetchCafedras = async () => {
   return axiosInstance
     .get("/v1/departments/")
@@ -105,6 +118,36 @@ export const deleteDepartment = async (id) => {
 export const changeDepartment = async (id, data) => {
   return axiosInstance
     .put(`/v1/departments/${id}/`, data) // data should include both name and abbreviation
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(error.response || error.message);
+      throw error.response?.data || error.message;
+    });
+};
+
+export const createNations = async (data) => {
+  return axiosInstance
+    .post("/v1/nationalities/", data)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(error.response || error.message);
+      throw error.response?.data || error.message;
+    });
+};
+
+export const deleteNations = async (id) => {
+  return axiosInstance
+    .delete(`/v1/nationalities/${id}/`)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(error.response || error.message);
+      throw error.response?.data || error.message;
+    });
+};
+
+export const changeNations = async (id, data) => {
+  return axiosInstance
+    .put(`/v1/nationalities/${id}/`, data) // data should include both name and abbreviation
     .then((response) => response.data)
     .catch((error) => {
       console.error(error.response || error.message);

@@ -31,6 +31,7 @@ import AddDegrees from "./components/Add/AddDegrees";
 import AddClassificators from "./components/Add/AddClassificators";
 import HighSchoolDetails from "./components/HighSchoolDetails/HighSchoolDetails.jsx";
 import AddFaculties from "./components/Add/AddFaculties.jsx";
+import AddNations from './components/Add/AddNations.jsx'
 //add each
 import AddEachApp from "./components/AddEach/AddEachApp.jsx";
 import AddEachCafedra from "./components/AddEach/AddEachCafedra.jsx";
@@ -243,6 +244,14 @@ const routes = createBrowserRouter([
     element: (
       <Layout>
         <AddCafedras />
+      </Layout>
+    ),
+  },
+  {
+    path: "/add-nations",
+    element: (
+      <Layout>
+        <AddNations />
       </Layout>
     ),
   },

@@ -31,7 +31,9 @@ export default function Login() {
           resetForm();
           navigate("/", { replace: true });
         } else {
-          alert(response?.message || "Login failed. Please check your credentials.");
+          alert(
+            response?.message || "Login failed. Please check your credentials."
+          );
         }
       } catch (error) {
         console.error("Error during login:", error);
@@ -42,12 +44,12 @@ export default function Login() {
   return (
     <>
       <Header />
-      <section className="pt-14 flex flex-col md:flex-row justify-center md:space-y-0 md:space-x-40 items-center mx-5 md:mx-0 md:my-0">
-        <div className="flex md:bg-[#FBFBFB] max-w-full items-center md:shadow-xl justify-center md:p-16 md:h-[500px] md:rounded-md">
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="flex p-2 rounded-md hover:shadow-2xl transition-shadow bg-stone-50 max-w-full justify-center items-center">
           <div className="w-[500px] hidden md:block">
             <img src={img} />
           </div>
-          <div className=" max-w-sm p-16 border rounded-xl shadow-xl ">
+          <div className=" max-w-sm p-16 rounded-xl shadow-xl ">
             <h3 className="font-Montserrat text-3xl mb-8 text-nowrap">
               Hoş Geldiňiz!✋
             </h3>
@@ -90,7 +92,7 @@ export default function Login() {
             </form>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }
