@@ -77,7 +77,7 @@ export default function Nations() {
       const updateData = {
         name: editData.name,
       };
-      await changeNations(editData.id, updateData);
+      await changeHighSchool(editData.id, updateData);
       setIsModalOpen(false);
       setNations((prev) =>
         prev.map((nat) =>

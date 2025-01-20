@@ -12,7 +12,7 @@ export const fetchHighSchoolDetails = async (id) => {
 
 export const fetchCafedraDetails = async (id) => {
   return axiosInstance
-    .get(`/v1/department/${id}/`)
+    .get(`/v1/departments/${id}/`)
     .then((response) => response.data)
     .catch((error) => {
       console.error("Error fetching high schools:", error.response || error.message);
@@ -22,7 +22,7 @@ export const fetchCafedraDetails = async (id) => {
 
 export const fetchViewStudents = async (id) => {
   return axiosInstance
-    .get(`/v1/student/${id}/`)
+    .get(`/v1/students/${id}/`)
     .then((response) => response.data)
     .catch((error) => {
       console.error("Error fetching high schools:", error.response || error.message);

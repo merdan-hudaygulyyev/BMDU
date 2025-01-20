@@ -74,6 +74,13 @@ export default function App() {
     student.full_name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const getHighSchoolName = (id) => {
+    const school = highSchool.find((school) => school.id === id);
+    return school ? school.name : '';
+  };
+
+
+
   return (
     <>
       <TableHeader title="Talyplar /" href="/add-students" />
@@ -123,7 +130,7 @@ export default function App() {
                       {student.full_name}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
-                      {student.high_school}
+                    {getHighSchoolName(student.high_school)}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
                       {student.specialization}
