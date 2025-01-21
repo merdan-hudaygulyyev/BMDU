@@ -19,7 +19,9 @@ export default function Charts() {
     if (admissionsData.length > 0) {
       const years = admissionsData.map((item) => item.year);
       const maleData = admissionsData.map((item) => item.male_students_count);
-      const femaleData = admissionsData.map((item) => item.female_students_count);
+      const femaleData = admissionsData.map(
+        (item) => item.female_students_count
+      );
 
       const totalData = admissionsData.map(
         (item) => item.male_students_count + item.female_students_count
@@ -113,8 +115,14 @@ export default function Charts() {
         },
       };
 
-      if (document.getElementById("data-series-chart") && typeof ApexCharts !== "undefined") {
-        const chart = new ApexCharts(document.getElementById("data-series-chart"), options);
+      if (
+        document.getElementById("data-series-chart") &&
+        typeof ApexCharts !== "undefined"
+      ) {
+        const chart = new ApexCharts(
+          document.getElementById("data-series-chart"),
+          options
+        );
         chart.render();
       }
     }
@@ -134,32 +142,7 @@ export default function Charts() {
       </div>
       <div id="data-series-chart"></div>
       <div className="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between mt-5">
-        <div className="flex justify-between items-center pt-5">
-          <button
-            id="dropdownDefaultButton"
-            data-dropdown-toggle="lastDaysdropdown"
-            data-dropdown-placement="bottom"
-            className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white"
-            type="button"
-          >
-            Last 7 days
-            <svg
-              className="w-2.5 m-2.5 ms-1.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 10 6"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m1 1 4 4 4-4"
-              />
-            </svg>
-          </button>
-        </div>
+       
       </div>
     </div>
   );
