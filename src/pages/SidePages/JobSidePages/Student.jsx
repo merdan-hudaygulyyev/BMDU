@@ -94,7 +94,7 @@ export default function App() {
             placeholder="Gözleg..."
           />
           <table className="min-w-full text-center text-sm font-Montserrat dark:text-white">
-            <thead className="border-b bg-white dark:bg-[#363062] font-medium dark:border-neutral-500 text-black dark:text-white">
+            <thead className="border-b bg-white dark:bg-[#092635] font-medium dark:border-neutral-500 text-black dark:text-white">
               <tr>
                 <th scope="col" className="px-6 py-4">
                   Id

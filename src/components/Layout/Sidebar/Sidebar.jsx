@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import OpenSidebar from "../../OpenSidebar/OpenSidebar";
-import logo from '../../../../public/images/1.png'
 import Button from "../../Button/Button";
 import { GrHomeRounded } from "react-icons/gr";
 import { HiChevronDown } from "react-icons/hi";
+import { FaBookReader } from "react-icons/fa";
 
 export default function Sidebar() {
   const [show, setShow] = useState(true);
@@ -36,17 +36,12 @@ export default function Sidebar() {
   return (
     <>
       <div
-        className={`bg-white dark:bg-[#363062] dark:shadow-none shadow-xl overflow-auto overflow-x-hidden rounded-r-md ${
+        className={`bg-white dark:bg-[#092635] dark:shadow-none shadow-xl overflow-auto overflow-x-hidden rounded-r-md ${
           showSidebar ? "w-[255px]" : "w-[72px]"
         }  p-4`}
       >
         <div className="flex items-center gap-4 ">
-          <img
-            src={logo}
-            className="w-8 "
-            alt="Logo"
-            onClick={() => setShowSidebar((prev) => !prev)}
-          />
+          <FaBookReader className="text-2xl text-gray-700 dark:text-white"/>
           <h1 className={`font-Quicksand ${!showSidebar ? "hidden" : "block"} font-semibold text-gray-600 dark:text-gray-300`}>B M D U</h1>
         </div>
         <div className="mt-3.5 flex flex-col justify-center items-center">

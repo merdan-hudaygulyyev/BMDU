@@ -6,7 +6,7 @@ import TopNavbar from "./TopNavbar/TopNavbar";
 const Layout = (props) => {
   const { children } = props;
   return (
-    <div className="box-border flex-1 h-screen bg-slate-200 dark:bg-[#030637] overflow-y-auto flex">
+    <div className="box-border flex-1 h-screen bg-slate-200 dark:bg-[#092635] overflow-y-auto flex">
       <Sidebar />
       <div className="flex flex-col flex-1">
         <TopNavbar />
