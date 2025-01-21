@@ -1,19 +1,13 @@
 import { useState, useEffect } from "react";
 import ColumnIcons from "../../components/icons/ColumnIcons";
 
-// Remove the import for the hardcoded statistic
-// import statistic from '../../assets/statsitic/statistics'
-
 export default function Columns() {
-  // State to hold the statistic data
   const [statistic, setStatistic] = useState([]);
   const [finished, setFinished] = useState([]);
 
-  // Fetch data when the component mounts
   useEffect(() => {
     async function fetchData() {
       try {
-        // Fetch the data from the API
         const response = await fetch('http://localhost:8000/api/v1/root-dashboard/');
         
         if (!response.ok) {

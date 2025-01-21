@@ -5,8 +5,6 @@ import HeadIcons from "../icons/HeadIcons";
 import FootIcons from "../icons/FootIcons";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { BiBasket } from "react-icons/bi";
-import { BsBasket } from "react-icons/bs";
 
 export default function OpenSidebar({ showSidebar }) {
   const { t } = useTranslation();

@@ -47,7 +47,7 @@ export default function Sidebar() {
             alt="Logo"
             onClick={() => setShowSidebar((prev) => !prev)}
           />
-          <h1 className="font-Quicksand font-semibold text-gray-600 dark:text-gray-300">B M D U</h1>
+          <h1 className={`font-Quicksand ${!showSidebar ? "hidden" : "block"} font-semibold text-gray-600 dark:text-gray-300`}>B M D U</h1>
         </div>
         <div className="mt-3.5 flex flex-col justify-center items-center">
           <a href="/" className="font-Montserrat">

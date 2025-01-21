@@ -53,6 +53,8 @@ export const menus = [
   { id: 9, path: "/country", title: "Ýurtlar", src: icon_9, type: "country" },
 ];
 
+
+
 export const listMenu = [
   {
     id: 10,
@@ -110,4 +112,4 @@ export const filterLists = [
   { id: 18, path: "/filter_2", name: "Süzgüç N2" },
 ];
 
-export const basket = [{ id: 19, path: "/basket", name: "Sebet"}];
+export const basket = [{ id: 19, path: "/basket", name: "Sebet" }];
