@@ -139,10 +139,10 @@ export default function Nations() {
                       {nat.students}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
-                      {nat.male_students}
+                      {nat.male_count}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
-                      {nat.female_students}
+                      {nat.female_count}
                     </td>
                     <td className="whitespace-nowrap space-x-2 px-3 py-4">
                       <button className="text-2xl text-black p-1 dark:text-white">

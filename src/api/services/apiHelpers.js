@@ -1,5 +1,13 @@
 import { axiosInstance } from "../axiosinstance";
 
+const accessToken = localStorage.getItem("access_token");
+
+const config = {
+  headers: {
+    Authorization: `BMDU ${accessToken}`,
+  },
+};
+
 export const LoginFN = async (data) => {
   return axiosInstance
     .post("/v1/token/", data)
@@ -25,7 +33,7 @@ export const fetchHighSchools = async () => {
 
 export const fetchNations = async () => {
   return axiosInstance
-    .get("/v1/nationalities/")
+    .get("/v1/student-count-by-nationality/")
     .then((response) => response.data)
     .catch((error) => {
       console.error(
@@ -51,7 +59,7 @@ export const fetchCafedras = async () => {
 
 export const fetchUsers = async () => {
   return axiosInstance
-    .get("/v1/root-dashboard/")
+    .get("/v1/root-dashboard/", config)
     .then((response) => response.data)
     .catch((error) => {
       console.error(
