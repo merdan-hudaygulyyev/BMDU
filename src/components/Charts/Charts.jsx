@@ -40,9 +40,9 @@ export default function Charts() {
             color: "#F44336",
           },
           {
-            name: "Jemi talyp sany", // New series for total
+            name: "Jemi talyp sany",
             data: totalData,
-            color: "#16C47F", // Yellow color for the total line
+            color: "#16C47F",
             stroke: {
               width: 4,
             },
@@ -88,9 +88,9 @@ export default function Charts() {
           show: false,
           strokeDashArray: 4,
           padding: {
-            left: 2,
-            right: 2,
-            top: 0,
+            left: 4,
+            right: 4,
+            top: 2,
           },
         },
         xaxis: {
@@ -129,11 +129,11 @@ export default function Charts() {
   }, [admissionsData]);
 
   return (
-    <div className="max-w-[98%] bg-white rounded-lg shadow dark:bg-gray-800/50 p-4 md:p-6 m-3">
+    <div className="max-w-[98%] bg-white rounded-lg shadow dark:bg-gray-800/60 p-4 md:p-6 m-3">
       <div className="flex justify-between">
         <div>
           <h5 className="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">
-            Statistika
+            Ýokary okuw mekdepleriniň statistikasy
           </h5>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
             Umumy talyp sanlary
