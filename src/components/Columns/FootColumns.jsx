@@ -1,14 +1,57 @@
+import { useEffect, useState } from "react";
 import { finished } from "../../assets/statsitic/statistics";
 import FootColumnIcons from "../icons/FootColumnIcons";
 
 export default function FootColumns() {
+  const [finished, setFinished] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          "http://localhost:8000/api/v1/root-dashboard/"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+
+        const fetchedFinished = [
+          {
+            id: 1,
+            path: "/insta",
+            title: data.male_graduates,
+            text: "Oglanlar",
+            type: "boys",
+          },
+          {
+            id: 2,
+            path: "/insta",
+            title: data.female_graduates,
+            text: "Gyzlar",
+            type: "girls",
+          },
+        ];
+
+        // Update the state with the fetched data
+        setFinished(fetchedFinished);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <ul className="cursor-pointer min-h-full grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 w-full p-2">
       {finished.map((posts) => (
         <a
           href="#"
           key={posts.id}
-          className="bg-white dark:text-white dark:bg-violet-400/25 dark:hover:bg-violet-400 rounded-lg shadow-xl hover:bg-white/60 max-w-[300px] max-h-[100px]  p-4 flex justify-between items-center"
+          className="bg-white dark:text-white dark:bg-slate-700 dark:hover:bg-violet-400 rounded-lg shadow-xl hover:bg-white/60 max-w-[300px] max-h-[100px]  p-4 flex justify-between items-center"
         >
           <div className="flex flex-col gap-2">
             <h3 className="text-2xl font-Poppins font-semibold">

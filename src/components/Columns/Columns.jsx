@@ -49,7 +49,7 @@ export default function Columns() {
         <a
           href={posts.path}
           key={posts.id}
-          className="bg-white dark:text-white dark:bg-violet-400/25 dark:hover:bg-violet-400 rounded-lg shadow-xl hover:bg-white/60 max-w-[300px] max-h-[100px]  p-4 flex justify-between items-center"
+          className="bg-white dark:text-white dark:bg-slate-700 dark:hover:bg-violet-400 rounded-lg shadow-xl hover:bg-white/60 max-w-[300px] max-h-[100px]  p-4 flex justify-between items-center"
         >
           <div className="flex flex-col gap-2">
             <h3 className="text-2xl font-Poppins font-semibold">
