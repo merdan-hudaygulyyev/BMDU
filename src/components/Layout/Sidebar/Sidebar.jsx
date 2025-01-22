@@ -36,7 +36,7 @@ export default function Sidebar() {
   return (
     <>
       <div
-        className={`bg-white dark:bg-[#092635] dark:shadow-none shadow-xl overflow-auto overflow-x-hidden rounded-r-md ${
+        className={`bg-white dark:bg-[#092635] dark:shadow-2xl shadow-xl overflow-auto overflow-x-hidden rounded-r-md ${
           showSidebar ? "w-[255px]" : "w-[72px]"
         }  p-4`}
       >

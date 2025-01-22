@@ -18,11 +18,11 @@ export default function AddStudents() {
   }, []);
 
   return (
-    <div className="mt-10 max-h-screen md:dark:bg-[#363062] bg-none max-w-full rounded-lg overflow-y-auto overflow-x-hidden mx-9 my-6">
+    <div className="mt-10 max-h-screen md:dark:bg-[#092635] bg-none max-w-full rounded-lg overflow-y-auto overflow-x-hidden mx-9 my-6">
       <h2 class="mt-3 text-center font-Quicksand font-medium text-slate-600 dark:text-white text-2xl">
         Talyp hasaba almak
       </h2>
-      <div className="max-h-screen bg-white dark:bg-[#363062] mt-5 shadow-xl rounded-md max-w-full p-6">
+      <div className="max-h-screen bg-white dark:bg-[#092635] mt-5 shadow-xl rounded-md max-w-full p-6">
         <form class="max-w-full mx-auto">
           <label
             for="countries"

@@ -31,7 +31,7 @@ export default function AddNations() {
   return (
     <>
       <TableHeader title="Millet goşmak" />
-      <div class="mx-7 my-7 bg-white dark:bg-[#363062] rounded-lg">
+      <div class="mx-7 my-7 bg-white dark:bg-[#092635] rounded-lg">
         <div class="mt-3 text-center font-Quicksand font-medium text-slate-600 dark:text-white text-2xl">
           Doldyrylmaly Anketa
         </div>
