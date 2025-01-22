@@ -129,19 +129,17 @@ export default function Charts() {
   }, [admissionsData]);
 
   return (
-    <div className="max-w-[98%] bg-white rounded-lg shadow dark:bg-gray-800/60 p-4 md:p-6 m-3">
+    <div className="max-w-[98%] bg-white rounded-lg shadow dark:text-white dark:bg-gray-800/60 p-4 md:p-6 m-3">
       <div className="flex flex-col justify-between">
-          <h5 className="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">
-            Ýokary okuw mekdepleriniň statistikasy
-          </h5>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400 mb-5">
-            Umumy talyp sanlary
-          </p>
+        <h5 className="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">
+          Ýokary okuw mekdepleriniň statistikasy
+        </h5>
+        <p className="text-base font-normal text-gray-500 dark:text-gray-400 mb-5">
+          Umumy talyp sanlary
+        </p>
       </div>
       <div id="data-series-chart"></div>
-      <div className="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between mt-5">
-       
-      </div>
+      <div className="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between mt-5"></div>
     </div>
   );
 }
