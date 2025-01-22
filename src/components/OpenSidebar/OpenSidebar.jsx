@@ -110,7 +110,7 @@ export default function OpenSidebar({ showSidebar }) {
           onClick={() => {
             handleActive(filter.path);
           }}
-          className={`flex items-center gap-3 text-nowrap p-2 mr-1 dark:hover:text-[#AF47D2] 
+          className={`flex items-center gap-3 text-nowrap p-2 mr-1  
       text-gray-500 hover:pl-4 ${
         showSidebar && "border"
       } border-none rounded-lg hover:bg-slate-600 dark:text-white mt-2 hover:text-white transition-all ${
