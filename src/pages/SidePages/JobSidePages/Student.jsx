@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MdOutlineDelete } from "react-icons/md";
 import { HiEye } from "react-icons/hi2";
-import { AiOutlineEdit } from "react-icons/ai";
+// import { AiOutlineEdit } from "react-icons/ai";
 import TableHeader from "../../../components/TableHeader/TableHeader";
 import { fetchHighSchools } from "../../../api/services/apiHelpers";
 import Pagination from "../../../components/Pagination/Pagination";
@@ -9,14 +9,21 @@ import {
   fetchStudents,
   fetchViewStudents,
 } from "../../../api/services/View/view";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 export default function App() {
-  const [highSchool, setHighSchool] = useState([])
+  const [highSchool, setHighSchool] = useState([]);
   const [students, setStudents] = useState([]);
-  const navigate = useNavigate();
   const [selectedSchool, setSelectedStudent] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const navigate = useNavigate();
+  // const searcParams = useSearchParams();
+  
+  // let [searchParams, setSearchParams] = useSearchParams();
+  // const sort_Id = searchParams.get("sort_Id");
+
+  // console.log(sort_Id);
 
   useEffect(() => {
     const getStudents = async () => {
@@ -76,10 +83,8 @@ export default function App() {
 
   const getHighSchoolName = (id) => {
     const school = highSchool.find((school) => school.id === id);
-    return school ? school.name : '';
+    return school ? school.name : "";
   };
-
-
 
   return (
     <>
@@ -130,7 +135,7 @@ export default function App() {
                       {student.full_name}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
-                    {getHighSchoolName(student.high_school)}
+                      {getHighSchoolName(student.high_school)}
                     </td>
                     <td className="whitespace-nowrap px-6 py-2 font-Quicksand">
                       {student.specialization}

@@ -50,15 +50,16 @@ export default function Nations() {
     }
   };
 
-  // const handleViewDetails = async (id) => {
-  //   try {
-  //     const data = await fetchHighSchoolDetails(id);
-  //     setSelectedSchool(data);
-  //     navigate(`/insta/${id}`);
-  //   } catch (error) {
-  //     console.error("Failed to fetch high school details:", error);
-  //   }
-  // };
+  const handleViewDetails = async (id) => {
+    try {
+      // const data = await fetchHighSchoolDetails(id);
+      // setSelectedSchool(data);
+      // navigate(`/insta/${id}`);
+      navigate(`/student?sort_Id=${id}`)
+    } catch (error) {
+      console.error("Failed to fetch high school details:", error);
+    }
+  };
 
   const handleEdit = (nation) => {
     setEditData({

@@ -30,7 +30,7 @@ export const fetchViewStudents = async (id) => {
     });
 };
 
-export const fetchStudents = async (id) => {
+export const fetchStudents = async () => {
   return axiosInstance
     .get(`/v1/students/`)
     .then((response) => response.data)
