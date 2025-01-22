@@ -3,17 +3,49 @@ import { useTranslation } from "react-i18next";
 import { FaFilter } from "react-icons/fa";
 import HeadIcons from "../icons/HeadIcons";
 import FootIcons from "../icons/FootIcons";
-import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useState, useRef } from "react";
 
 export default function OpenSidebar({ showSidebar }) {
   const { t } = useTranslation();
   const location = useLocation(); // Get current URL path
+  const navigate = useNavigate(); // Navigate programmatically
   const [activePath, setActivePath] = useState(location.pathname);
 
   const handleActive = (path) => {
     setActivePath(path);
+    navigate(path); // Navigate to the new path
   };
+
+  const scrollToActive = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
+  const generateLink = (item, refName, IconComponent) => (
+    <a
+      id={refName}
+      key={item.id}
+      onClick={(e) => {
+        e.preventDefault();
+        handleActive(item.path);
+        scrollToActive(refName);
+      }}
+      className={`flex items-center gap-2 cursor-pointer text-nowrap p-2 mr-1 
+        text-gray-600 hover:pl-4 ${
+          showSidebar && "border"
+        } border-none rounded-lg hover:bg-slate-600 dark:text-white mt-2 hover:text-white transition-all ${
+        activePath === item.path
+          ? "bg-slate-600 text-white p-2 border-none"
+          : ""
+      }`}
+    >
+      <span>{item.icon || <IconComponent type={item.type} />}</span>
+      {showSidebar && <h3>{item.title || item.name}</h3>}
+    </a>
+  );
 
   return (
     <div className="mt-5 p-2 mb-4 -m-3 w-[250px] max-h-screen rounded-r-md">
@@ -23,28 +55,7 @@ export default function OpenSidebar({ showSidebar }) {
         </h2>
       )}
       <ul className="mt-2 flex flex-col">
-        {menus?.map((menu) => (
-          <a
-            key={menu.id}
-            href={menu.path}
-            onClick={() => {
-              handleActive(menu.path);
-            }}
-            className={`flex items-center gap-2 text-nowrap p-2 mr-1 
-            text-gray-600 hover:pl-4 ${
-              showSidebar && "border"
-            } border-none rounded-lg hover:bg-slate-600 dark:text-white mt-2 hover:text-white transition-all ${
-              activePath === menu.path
-                ? "bg-slate-600 text-white p-2 border-none"
-                : ""
-            }`}
-          >
-            <span>
-              <HeadIcons type={menu.type} />
-            </span>
-            {showSidebar && <h3>{menu.title}</h3>}
-          </a>
-        ))}
+        {menus?.map((menu) => generateLink(menu, `menu-${menu.id}`, HeadIcons))}
       </ul>
       <ul className="mt-4 flex flex-col">
         {showSidebar && (
@@ -52,28 +63,7 @@ export default function OpenSidebar({ showSidebar }) {
             Okuw işleri
           </h2>
         )}
-        {listMenu?.map((lists) => (
-          <a
-            key={lists.id}
-            href={lists.path}
-            onClick={() => {
-              handleActive(lists.path);
-            }} 
-            className={`flex items-center gap-2 p-2 text-nowrap mr-1 
-      text-gray-500 hover:pl-4 ${
-        showSidebar && "border"
-      } border-none rounded-lg hover:bg-slate-600 dark:text-white mt-2 hover:text-white transition-all ${
-              activePath === lists.path
-                ? "bg-slate-600 text-white p-2 border-none"
-                : ""
-            }`}
-          >
-            <span>
-              <FootIcons type={lists.type} />
-            </span>
-            {showSidebar && <h3>{lists.title}</h3>}
-          </a>
-        ))}
+        {listMenu?.map((lists) => generateLink(lists, `list-${lists.id}`, FootIcons))}
       </ul>
 
       <ul className="mt-4 flex flex-col">
