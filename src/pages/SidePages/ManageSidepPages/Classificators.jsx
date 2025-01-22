@@ -49,7 +49,7 @@ export default function App() {
                   Id
                 </th>
                 <th scope="col" className="px-6 py-4">
-                  Hünar derejeleri
+                Klassifikatorlar
                 </th>
                 <th scope="col" className="px-6 py-4">
                   Wagty

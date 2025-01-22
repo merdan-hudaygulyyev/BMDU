@@ -4,7 +4,7 @@ import OpenSidebar from "../../OpenSidebar/OpenSidebar";
 import Button from "../../Button/Button";
 import { GrHomeRounded } from "react-icons/gr";
 import { HiChevronDown } from "react-icons/hi";
-import logo from '../../../../public/images/graduation-cap.png'
+import logo from "../../../../public/images/graduation-cap.png";
 
 export default function Sidebar() {
   const [show, setShow] = useState(true);
@@ -41,8 +41,18 @@ export default function Sidebar() {
         }  p-4`}
       >
         <div className="flex items-center gap-4 ">
-          <img src={logo} className="w-10 h-10"/>
-          <h1 className={`font-Quicksand ${!showSidebar ? "hidden" : "block"} font-semibold text-gray-600 dark:text-gray-300`}>B M D U</h1>
+          <img
+            src={logo}
+            className="w-10 h-10"
+            onClick={() => setShowSidebar((prev) => !prev)}
+          />
+          <h1
+            className={`font-Quicksand ${
+              !showSidebar ? "hidden" : "block"
+            } font-semibold text-gray-600 dark:text-gray-300`}
+          >
+            B M D U
+          </h1>
         </div>
         <div className="mt-3.5 flex flex-col justify-center items-center">
           <a href="/" className="font-Montserrat">
@@ -54,7 +64,9 @@ export default function Sidebar() {
         </div>
         <div className="mt-3 flex flex-col justify-between gap-2 text-nowrap">
           {showSidebar && (
-            <p className="font-Poppins font-semibold text-gray-600 dark:text-gray-300">{t("education")}</p>
+            <p className="font-Poppins font-semibold text-gray-600 dark:text-gray-300">
+              {t("education")}
+            </p>
           )}
           <Button
             onClick={() => {
@@ -87,7 +99,7 @@ export default function Sidebar() {
                 />
               </>
             ) : (
-             <h2>Orta</h2>
+              <h2>Orta</h2>
             )}
           </Button>
         </div>

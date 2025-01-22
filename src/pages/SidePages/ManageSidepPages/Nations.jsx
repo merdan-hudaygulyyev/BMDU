@@ -107,7 +107,7 @@ export default function Nations() {
                   Id
                 </th>
                 <th scope="col" className="px-6 py-4">
-                  Ýokary okuw mekdepleri
+                Milletler
                 </th>
                 <th scope="col" className="px-6 py-4">
                   Talyp
