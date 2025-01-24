@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { finished } from "../../assets/statsitic/statistics";
 import FootColumnIcons from "../icons/FootColumnIcons";
 import axios from "axios";
 
@@ -8,43 +7,42 @@ export default function FootColumns() {
 
   useEffect(() => {
     async function fetchData() {
-      const token = "BMDU " + localStorage.getItem("access_token");
-
-      const config = {
-        headers: {
-          Authorization: token,
-        },
-      };
+      const token = localStorage.getItem("access_token");
+      if (!token) {
+        console.error("Access token not found in localStorage");
+        return;
+      }
 
       try {
-        const response = await fetch(
+        const { data } = await axios.get(
           "https://bmdu.depder.com/api/v1/root-dashboard/",
-          config,
+          {
+            headers: {
+              Authorization: `BMDU ${token}`,
+            },
+          }
         );
-
-        const data = await response.json();
 
         const fetchedFinished = [
           {
             id: 1,
             path: "/insta",
-            title: data.male_graduates,
+            title: data.male_students_count,
             text: "Oglanlar",
             type: "boys",
           },
           {
             id: 2,
             path: "/insta",
-            title: data.female_graduates,
+            title: data.female_students_count,
             text: "Gyzlar",
             type: "girls",
           },
         ];
 
-        // Update the state with the fetched data
         setFinished(fetchedFinished);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching data:", error.message);
       }
     }
 

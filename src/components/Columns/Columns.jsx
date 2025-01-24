@@ -4,25 +4,24 @@ import axios from "axios";
 
 export default function Columns() {
   const [statistic, setStatistic] = useState([]);
-  const [finished, setFinished] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const token = "BMDU " + localStorage.getItem("access_token");
-
-      const config = {
-        headers: {
-          Authorization: token,
-        },
-      };
+      const token = localStorage.getItem("access_token");
+      if (!token) {
+        console.error("Access token not found in localStorage");
+        return;
+      }
 
       try {
-        const response = await fetch(
+        const { data } = await axios.get(
           "https://bmdu.depder.com/api/v1/root-dashboard/",
-          config,
+          {
+            headers: {
+              Authorization: `BMDU ${token}`,
+            },
+          }
         );
-
-        const data = await response.json();
 
         const fetchedStatistic = [
           {
@@ -41,24 +40,24 @@ export default function Columns() {
           },
           {
             id: 3,
-            path: "/nations",
-            title: data.nationalities_count,
-            text: "Millet sany",
-            type: "nations",
-          },
-          {
-            id: 4,
             path: "/cafedra",
             title: data.departments_count,
             text: "Kafedra sany",
             type: "cafedras",
           },
           {
-            id: 5,
+            id: 4,
             path: "/apps",
             title: data.specializations_count,
-            text: "Hünar sany",
+            text: "Hünär sany",
             type: "apps",
+          },
+          {
+            id: 5,
+            path: "/nations",
+            title: data.nationalities_count,
+            text: "Millet sany",
+            type: "nations",
           },
           {
             id: 6,
@@ -69,42 +68,23 @@ export default function Columns() {
           },
           {
             id: 7,
-            path: "#",
+            path: "/student",
             title: data.male_students_count,
-            text: "Jemi oglan sany",
+            text: "Oglan sany",
             type: "boys",
           },
           {
             id: 8,
-            path: "#",
+            path: "/student",
             title: data.female_students_count,
-            text: "Jemi gyz sany",
+            text: "Gyz sany",
             type: "girls",
           },
         ];
 
-        const fetchedFinished = [
-          {
-            id: 1,
-            path: "/insta",
-            title: data.finishedBoys,
-            text: "Oglanlar",
-            type: "boys",
-          },
-          {
-            id: 2,
-            path: "/insta",
-            title: data.finishedGirls,
-            text: "Gyzlar",
-            type: "girls",
-          },
-        ];
-
-        // Update the state with the fetched data
         setStatistic(fetchedStatistic);
-        setFinished(fetchedFinished);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching data:", error.message);
       }
     }
 
