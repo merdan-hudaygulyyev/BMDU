@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react";
 import { finished } from "../../assets/statsitic/statistics";
 import FootColumnIcons from "../icons/FootColumnIcons";
+import axios from "axios";
 
 export default function FootColumns() {
   const [finished, setFinished] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      try {
-        const response = await fetch(
-          "http://localhost:8000/api/v1/root-dashboard/"
-        );
+      const token = "BMDU" + localStorage.getItem("access_token");
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+      const config = {
+        headers: {
+          Authorization: token,
+        },
+      };
+
+      try {
+        const response = await axios.get(
+          "https://bmdu.depder.com/api/v1/root-dashboard/",
+          config,
+        );
 
         const data = await response.json();
 

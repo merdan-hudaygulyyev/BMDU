@@ -1,18 +1,37 @@
 import React, { useEffect, useState } from "react";
 import ApexCharts from "apexcharts";
+import axios from "axios";
 
 export default function Charts() {
   const [admissionsData, setAdmissionsData] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/v1/root-dashboard/")
-      .then((response) => response.json())
-      .then((data) => {
-        setAdmissionsData(data.admissions);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+    const token = "BMDU" + localStorage.getItem("access_token");
+    console.log(token)
+    
+    const config = {
+      headers: {
+        Authorization: token,
+      },
+    };
+
+    async function fetchData() {
+      try {
+        const response = await axios.get(
+          "https://bmdu.depder.com/api/v1/root-dashboard/",
+          config,
+        );
+
+        setAdmissionsData(response.data.admissions);
+      } catch (error) {
+        console.error(
+          "Error fetching data:",
+          error.response ? error.response.data : error.message
+        );
+      }
+    }
+
+    fetchData();
   }, []);
 
   useEffect(() => {

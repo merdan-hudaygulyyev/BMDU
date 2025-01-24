@@ -3,5 +3,14 @@
     "education": "Kind of schools",
     "school": "Secondary Schools",
     "high-school": "Institutions",
-    "manage": "Administration"
+    "manage": "Administration",
+    "high-schools-list": "Institutions",
+    "faculties": "Faculties",
+    "province": "Provinces",
+    "cafedra": "Cafedras",
+    "app": "Apps",
+    "app_degree": "App degrees",
+    "clas": "Classificators",
+    "nations": "Nations",
+    "country": "Countries"
 }

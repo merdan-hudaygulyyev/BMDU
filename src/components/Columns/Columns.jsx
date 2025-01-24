@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ColumnIcons from "../../components/icons/ColumnIcons";
+import axios from "axios";
 
 export default function Columns() {
   const [statistic, setStatistic] = useState([]);
@@ -7,36 +8,103 @@ export default function Columns() {
 
   useEffect(() => {
     async function fetchData() {
+      const token = "BMDU" + localStorage.getItem("access_token");
+
+      const config = {
+        headers: {
+          Authorization: token,
+        },
+      };
+
       try {
-        const response = await fetch('http://localhost:8000/api/v1/root-dashboard/');
-        
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
+        const response = await axios.get(
+          "https://bmdu.depder.com/api/v1/root-dashboard/",
+          config,
+        );
 
         const data = await response.json();
 
         const fetchedStatistic = [
-          { id: 1, path: '/insta', title: data.high_schools_count, text: "Ýokary okuw mekdepleri", type: "institute" },
-          { id: 2, path: '/faculties', title: data.faculties_count, text: "Fakultet sany", type: "faculties" },
-          { id: 3, path: '/nations', title: data.nationalities_count, text: "Millet sany", type: "nations" },
-          { id: 4, path: '/cafedra', title: data.departments_count, text: "Kafedra sany", type: "cafedras" },
-          { id: 5, path: '/apps', title: data.specializations_count, text: "Hünar sany", type: "apps" },
-          { id: 6, path: '/student', title: data.students_count, text: "Jemi talyp sany", type: "result" },
-          { id: 7, path: '#', title: data.male_students_count, text: "Jemi oglan sany", type: "boys" },
-          { id: 8, path: '#', title: data.female_students_count, text: "Jemi gyz sany", type: "girls" },
+          {
+            id: 1,
+            path: "/insta",
+            title: data.high_schools_count,
+            text: "Ýokary okuw mekdepleri",
+            type: "institute",
+          },
+          {
+            id: 2,
+            path: "/faculties",
+            title: data.faculties_count,
+            text: "Fakultet sany",
+            type: "faculties",
+          },
+          {
+            id: 3,
+            path: "/nations",
+            title: data.nationalities_count,
+            text: "Millet sany",
+            type: "nations",
+          },
+          {
+            id: 4,
+            path: "/cafedra",
+            title: data.departments_count,
+            text: "Kafedra sany",
+            type: "cafedras",
+          },
+          {
+            id: 5,
+            path: "/apps",
+            title: data.specializations_count,
+            text: "Hünar sany",
+            type: "apps",
+          },
+          {
+            id: 6,
+            path: "/student",
+            title: data.students_count,
+            text: "Jemi talyp sany",
+            type: "result",
+          },
+          {
+            id: 7,
+            path: "#",
+            title: data.male_students_count,
+            text: "Jemi oglan sany",
+            type: "boys",
+          },
+          {
+            id: 8,
+            path: "#",
+            title: data.female_students_count,
+            text: "Jemi gyz sany",
+            type: "girls",
+          },
         ];
 
         const fetchedFinished = [
-          { id: 1, path: '/insta', title: data.finishedBoys, text: 'Oglanlar', type: 'boys' },
-          { id: 2, path: '/insta', title: data.finishedGirls, text: 'Gyzlar', type: 'girls' },
+          {
+            id: 1,
+            path: "/insta",
+            title: data.finishedBoys,
+            text: "Oglanlar",
+            type: "boys",
+          },
+          {
+            id: 2,
+            path: "/insta",
+            title: data.finishedGirls,
+            text: "Gyzlar",
+            type: "girls",
+          },
         ];
 
         // Update the state with the fetched data
         setStatistic(fetchedStatistic);
         setFinished(fetchedFinished);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     }
 

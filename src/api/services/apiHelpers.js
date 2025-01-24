@@ -1,13 +1,5 @@
 import { axiosInstance } from "../axiosinstance";
 
-const accessToken = localStorage.getItem("access_token");
-
-const config = {
-  headers: {
-    Authorization: `BMDU ${accessToken}`,
-  },
-};
-
 export const LoginFN = async (data) => {
   return axiosInstance
     .post("/v1/token/", data)
@@ -59,7 +51,7 @@ export const fetchCafedras = async () => {
 
 export const fetchUsers = async () => {
   return axiosInstance
-    .get("/v1/root-dashboard/", config)
+    .get("/v1/root-dashboard/")
     .then((response) => response.data)
     .catch((error) => {
       console.error(
@@ -125,7 +117,7 @@ export const deleteDepartment = async (id) => {
 
 export const changeDepartment = async (id, data) => {
   return axiosInstance
-    .put(`/v1/departments/${id}/`, data) // data should include both name and abbreviation
+    .put(`/v1/departments/${id}/`, data)
     .then((response) => response.data)
     .catch((error) => {
       console.error(error.response || error.message);
@@ -155,7 +147,7 @@ export const deleteNations = async (id) => {
 
 export const changeNations = async (id, data) => {
   return axiosInstance
-    .put(`/v1/nationalities/${id}/`, data) // data should include both name and abbreviation
+    .put(`/v1/nationalities/${id}/`, data)
     .then((response) => response.data)
     .catch((error) => {
       console.error(error.response || error.message);
@@ -188,7 +180,7 @@ export const deleteDegrees = async (id) => {
 
 export const changeDegrees = async (id, data) => {
   return axiosInstance
-    .put(`/v1/degrees/${id}/`, data) // data should include both name and abbreviation
+    .put(`/v1/degrees/${id}/`, data) 
     .then((response) => response.data)
     .catch((error) => {
       console.error(error.response || error.message);

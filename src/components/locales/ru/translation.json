@@ -3,5 +3,14 @@
     "education": "Вид школ",
     "school": "Средние школы",
     "high-school": "В У З Ы ",
-    "manage": "Администрация"
+    "manage": "Администрация",
+    "high-schools-list": "В У З Ы ",
+    "faculties": "Факультеты",
+    "province": "Провинции",
+    "cafedra": "Кафедры",
+    "app": "Занятия",
+    "app_degree": "Степени занятий",
+    "clas": "Классификаторы",
+    "nations": "Нации",
+    "country": "Страны"
 }

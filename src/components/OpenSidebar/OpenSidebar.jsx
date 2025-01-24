@@ -33,7 +33,7 @@ export default function OpenSidebar({ showSidebar }) {
         handleActive(item.path);
         scrollToActive(refName);
       }}
-      className={`flex items-center gap-2 cursor-pointer text-nowrap p-2 mr-1 
+      className={`flex items-center gap-2 cursor-pointer text-nowrap p-2 mr-1
         text-gray-600 hover:pl-4 ${
           showSidebar && "border"
         } border-none rounded-lg hover:bg-slate-600 dark:text-white mt-2 hover:text-white transition-all ${

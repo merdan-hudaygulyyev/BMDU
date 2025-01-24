@@ -24,9 +24,8 @@ export default function Login() {
         console.log("API Response Details:", response);
 
         if (response?.access) {
-          localStorage.setItem("accsess_token", response.access);
+          localStorage.setItem("access_token", response.access);
           localStorage.setItem("refresh_token", response.refresh);
-          console.log("Token saved:", response.access);
 
           resetForm();
           navigate("/", { replace: true });
