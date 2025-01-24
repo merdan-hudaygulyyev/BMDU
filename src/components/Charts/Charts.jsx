@@ -6,8 +6,7 @@ export default function Charts() {
   const [admissionsData, setAdmissionsData] = useState([]);
 
   useEffect(() => {
-    const token = "BMDU" + localStorage.getItem("access_token");
-    console.log(token)
+    const token = "BMDU " + localStorage.getItem("access_token");
     
     const config = {
       headers: {
@@ -17,11 +16,10 @@ export default function Charts() {
 
     async function fetchData() {
       try {
-        const response = await axios.get(
+        const response = await fetch(
           "https://bmdu.depder.com/api/v1/root-dashboard/",
           config,
         );
-
         setAdmissionsData(response.data.admissions);
       } catch (error) {
         console.error(

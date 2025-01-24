@@ -8,7 +8,7 @@ export default function Columns() {
 
   useEffect(() => {
     async function fetchData() {
-      const token = "BMDU" + localStorage.getItem("access_token");
+      const token = "BMDU " + localStorage.getItem("access_token");
 
       const config = {
         headers: {
@@ -17,7 +17,7 @@ export default function Columns() {
       };
 
       try {
-        const response = await axios.get(
+        const response = await fetch(
           "https://bmdu.depder.com/api/v1/root-dashboard/",
           config,
         );
